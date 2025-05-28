@@ -12,19 +12,15 @@ title: Contact
     <div class="contact-content">
         <div class="contact-info">
             <div class="social-links">
-                <a href="https://github.com/your-username" class="social-link" target="_blank">
+                <a href="https://github.com/disturbedbanana" class="social-link" target="_blank">
                     <i class="fab fa-github"></i>
                     <span>GitHub</span>
                 </a>
-                <a href="https://linkedin.com/in/your-username" class="social-link" target="_blank">
+                <a href="https://linkedin.com/in/lucas-guichard" class="social-link" target="_blank">
                     <i class="fab fa-linkedin"></i>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://twitter.com/your-username" class="social-link" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                    <span>Twitter</span>
-                </a>
-                <a href="https://itch.io/profile/your-username" class="social-link" target="_blank">
+                <a href="https://itch.io/profile/disturbedbanana" class="social-link" target="_blank">
                     <i class="fas fa-gamepad"></i>
                     <span>itch.io</span>
                 </a>
@@ -32,15 +28,15 @@ title: Contact
 
             <div class="email-section">
                 <h2>Email</h2>
-                <a href="mailto:your.email@example.com" class="email-link">
+                <a href="mailto:lucas.guichard@example.com" class="email-link">
                     <i class="fas fa-envelope"></i>
-                    your.email@example.com
+                    lucas.guichard@example.com
                 </a>
             </div>
         </div>
 
         <div class="contact-form">
-            <form action="https://formspree.io/f/your-form-id" method="POST">
+            <form action="https://formspree.io/f/xpzvnqbv" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
