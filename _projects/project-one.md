@@ -1,8 +1,8 @@
 ---
 layout: project
 title: Project One
-image: /assets/images/project-one.jpg
-itchio_link: https://your-username.itch.io/project-one
+image: /assets/images/project-one.png
+itchio_link: https://atsue.itch.io/kourou-space-coop
 ---
 
 <div class="project-container">

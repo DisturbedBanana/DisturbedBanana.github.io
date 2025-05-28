@@ -86,8 +86,7 @@ title: Contact
 
     .subtitle {
         font-size: 1.2rem;
-        color: var(--text-color);
-        opacity: 0.8;
+        color: var(--text-secondary);
     }
 
     .contact-content {
@@ -167,7 +166,7 @@ title: Contact
     .form-group label {
         display: block;
         margin-bottom: 0.5rem;
-        color: var(--text-color);
+        color: var(--text-secondary);
         font-weight: 500;
     }
 

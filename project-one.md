@@ -1,8 +1,8 @@
 ---
 layout: project
-title: Project One
+title: Kourou Space Coop
 image: /assets/images/project-one.png
-itchio_link: https://disturbedbanana.itch.io/project-one
+itchio_link: https://atsue.itch.io/kourou-space-coop
 ---
 
 <div class="project-container">
@@ -21,52 +21,59 @@ itchio_link: https://disturbedbanana.itch.io/project-one
 
         <div class="project-description">
             <h2>About the Project</h2>
-            <p>A 2D platformer game where I focused on creating intuitive gameplay mechanics and efficient development tools. The project showcases my expertise in both gameplay programming and tool development for game production.</p>
+            <p>Kourou Space Coop is a cooperative VR game where two players work together to complete missions inspired by Ariane 5 rocket launches. As a Game Programmer, I focused on implementing the core gameplay mechanics and networking systems for this unique cooperative experience.</p>
             <ul>
-                <li>Designed and implemented a custom character controller with precise movement mechanics</li>
-                <li>Created an in-editor level design tool for rapid prototyping and iteration</li>
-                <li>Developed a visual scripting system for non-programmers to create game events</li>
-                <li>Implemented a modular animation system for smooth character movement</li>
+                <li>Implemented networked multiplayer functionality for two VR players</li>
+                <li>Developed zero-gravity physics system for the robot player</li>
+                <li>Created interactive control systems for the ground control player</li>
+                <li>Designed and implemented the communication system between players</li>
             </ul>
 
             <h2>Development Process</h2>
-            <p>This project was developed over a 3-month period, with a strong focus on creating tools that would speed up the development process. The biggest challenge was creating an intuitive interface for the level design tool while maintaining powerful functionality.</p>
-            <p>Key achievements include reducing level creation time by 70% through the custom tools and implementing a data-driven approach to gameplay mechanics that made balancing and iteration much faster.</p>
+            <p>This project was developed as a collaborative effort with a team of artists, designers, and programmers. The biggest challenge was creating a seamless cooperative experience between two VR players, each with their own unique gameplay mechanics and perspective.</p>
+            <p>Key achievements include implementing a robust networking system for VR multiplayer and creating intuitive controls for both the ground control and robot players that work well in a VR environment.</p>
 
             <h2>Technical Details</h2>
             <p>The project was built using:</p>
             <ul>
-                <li>Unity Game Engine (2022.3 LTS)</li>
-                <li>C# for core gameplay and tools development</li>
-                <li>Unity Editor Extensions for custom tool creation</li>
-                <li>Scriptable Objects for data management</li>
-                <li>Custom editor windows for tool interfaces</li>
-                <li>Unity's new Input System for cross-platform support</li>
+                <li>Unity Game Engine</li>
+                <li>C# for core gameplay and networking</li>
+                <li>Oculus Quest SDK for VR implementation</li>
+                <li>Server-based networked multiplayer system</li>
+                <li>Custom physics system for zero-gravity mechanics</li>
+                <li>Blender for 3D asset creation</li>
             </ul>
 
-            <h2>Tools Developed</h2>
+            <h2>Game Features</h2>
             <ul>
-                <li>Level Editor Tool
+                <li>Cooperative Gameplay
                     <ul>
-                        <li>Visual grid-based placement system</li>
-                        <li>Prefab management and organization</li>
-                        <li>Level validation and testing tools</li>
+                        <li>Two distinct player roles: Ground Control and Robot</li>
+                        <li>Real-time communication between players</li>
+                        <li>Mission-based objectives requiring coordination</li>
                     </ul>
                 </li>
-                <li>Gameplay Event System
+                <li>VR Implementation
                     <ul>
-                        <li>Visual node-based event editor</li>
-                        <li>Custom event types and conditions</li>
-                        <li>Real-time event testing and debugging</li>
+                        <li>Full VR support for both players</li>
+                        <li>Intuitive motion controls</li>
+                        <li>Immersive zero-gravity environment</li>
                     </ul>
                 </li>
-                <li>Animation State Manager
+                <li>Technical Systems
                     <ul>
-                        <li>Visual state machine editor</li>
-                        <li>Transition preview and testing</li>
-                        <li>Animation event integration</li>
+                        <li>Server-based multiplayer networking</li>
+                        <li>Custom physics for space environment</li>
+                        <li>Interactive control systems</li>
                     </ul>
                 </li>
+            </ul>
+
+            <h2>Credits</h2>
+            <ul>
+                <li>Game Artists: Flora DENIS, Morgan HUYNH-PEREZ, Enzo DE CORTE, Melvin LITIERE</li>
+                <li>Game Designers: Eliass GODSON, Nicolas COULLIAIS</li>
+                <li>Game Programmers: Nicolas KOHLER, Lucas GUICHARD</li>
             </ul>
         </div>
     </div>
@@ -88,7 +95,7 @@ itchio_link: https://disturbedbanana.itch.io/project-one
 
     .project-header h1 {
         font-size: 2.5rem;
-        color: #1f2937;
+        color: var(--text-color);
     }
 
     .itchio-button {
@@ -127,7 +134,7 @@ itchio_link: https://disturbedbanana.itch.io/project-one
         width: 100%;
         height: auto;
         border-radius: 1rem;
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        box-shadow: 0 4px 6px var(--shadow-color);
     }
 
     .project-description {
@@ -136,12 +143,17 @@ itchio_link: https://disturbedbanana.itch.io/project-one
 
     .project-description h2 {
         margin: 1.5rem 0 1rem;
-        color: #1f2937;
+        color: var(--text-color);
+    }
+
+    .project-description p {
+        color: var(--text-secondary);
     }
 
     .project-description ul {
         margin: 1rem 0;
         padding-left: 1.5rem;
+        color: var(--text-secondary);
     }
 
     .project-description li {
