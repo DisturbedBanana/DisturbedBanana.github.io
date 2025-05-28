@@ -16,7 +16,7 @@ title: Contact
                     <i class="fab fa-github"></i>
                     <span>GitHub</span>
                 </a>
-                <a href="https://linkedin.com/in/lucas-guichard" class="social-link" target="_blank">
+                <a href="https://www.linkedin.com/in/lucas-guichard-link/" class="social-link" target="_blank">
                     <i class="fab fa-linkedin"></i>
                     <span>LinkedIn</span>
                 </a>
@@ -28,15 +28,15 @@ title: Contact
 
             <div class="email-section">
                 <h2>Email</h2>
-                <a href="mailto:lucas.guichard@example.com" class="email-link">
+                <a href="mailto:lucasguichard78@gmail.com" class="email-link">
                     <i class="fas fa-envelope"></i>
-                    lucas.guichard@example.com
+                    lucasguichard78@gmail.com
                 </a>
             </div>
         </div>
 
         <div class="contact-form">
-            <form action="https://formspree.io/f/xpzvnqbv" method="POST">
+            <form action="https://formspree.io/f/mzzrnywb" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
