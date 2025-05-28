@@ -5,11 +5,11 @@ title: Welcome
 
 <div class="hero">
   <div class="hero-content">
-    <h1>Welcome to My Portfolio</h1>
-    <p class="subtitle">Software Developer & Designer</p>
+    <h1>Lucas Guichard</h1>
+    <p class="subtitle">Gameplay & Tools Developer, UX enthusiast</p>
     <div class="cta-buttons">
       <a href="#projects" class="cta-button primary">View Projects</a>
-      <a href="#contact" class="cta-button secondary">Contact Me</a>
+      <a href="/contact" class="cta-button secondary">Contact Me</a>
     </div>
   </div>
 </div>
@@ -28,35 +28,43 @@ title: Welcome
       <div class="project-card">
         <h3>Project One</h3>
         <p>Description of your first project goes here.</p>
+        <a href="/project-one" class="project-link">Learn More</a>
       </div>
       <div class="project-card">
         <h3>Project Two</h3>
         <p>Description of your second project goes here.</p>
+        <a href="/project-two" class="project-link">Learn More</a>
       </div>
       <div class="project-card">
         <h3>Project Three</h3>
         <p>Description of your third project goes here.</p>
+        <a href="/project-three" class="project-link">Learn More</a>
       </div>
       <div class="project-card">
         <h3>Project Four</h3>
         <p>Description of your fourth project goes here.</p>
+        <a href="/project-four" class="project-link">Learn More</a>
       </div>
       <!-- Duplicate cards for seamless scrolling -->
       <div class="project-card">
         <h3>Project One</h3>
         <p>Description of your first project goes here.</p>
+        <a href="/project-one" class="project-link">Learn More</a>
       </div>
       <div class="project-card">
         <h3>Project Two</h3>
         <p>Description of your second project goes here.</p>
+        <a href="/project-two" class="project-link">Learn More</a>
       </div>
       <div class="project-card">
         <h3>Project Three</h3>
         <p>Description of your third project goes here.</p>
+        <a href="/project-three" class="project-link">Learn More</a>
       </div>
       <div class="project-card">
         <h3>Project Four</h3>
         <p>Description of your fourth project goes here.</p>
+        <a href="/project-four" class="project-link">Learn More</a>
       </div>
     </div>
   </div>
@@ -173,6 +181,19 @@ title: Welcome
 
   .project-card:hover {
     transform: translateY(-4px);
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .project-link:hover {
+    color: #4f46e5;
   }
 
   @media (max-width: 768px) {
