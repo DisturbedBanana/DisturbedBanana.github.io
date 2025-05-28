@@ -23,14 +23,41 @@ title: Welcome
 
 <section id="projects" class="projects-section">
   <h2>Featured Projects</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <h3>Project One</h3>
-      <p>Description of your first project goes here.</p>
-    </div>
-    <div class="project-card">
-      <h3>Project Two</h3>
-      <p>Description of your second project goes here.</p>
+  <div class="auto-scroll-container">
+    <div class="auto-scroll">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>Description of your first project goes here.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Description of your second project goes here.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>Description of your third project goes here.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Four</h3>
+        <p>Description of your fourth project goes here.</p>
+      </div>
+      <!-- Duplicate cards for seamless scrolling -->
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>Description of your first project goes here.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Description of your second project goes here.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>Description of your third project goes here.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Four</h3>
+        <p>Description of your fourth project goes here.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -106,11 +133,32 @@ title: Welcome
     line-height: 1.6;
   }
 
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Auto-scrolling projects section */
+  .auto-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .auto-scroll {
+    display: flex;
     gap: 2rem;
-    margin-top: 2rem;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+  }
+
+  .auto-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   .project-card {
@@ -119,6 +167,8 @@ title: Welcome
     border-radius: 1rem;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     transition: transform 0.2s;
+    min-width: 300px;
+    max-width: 300px;
   }
 
   .project-card:hover {
@@ -132,6 +182,11 @@ title: Welcome
     
     .cta-buttons {
       flex-direction: column;
+    }
+
+    .project-card {
+      min-width: 250px;
+      max-width: 250px;
     }
   }
 </style> 
