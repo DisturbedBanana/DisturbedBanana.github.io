@@ -80,13 +80,14 @@ title: Contact
 
     .contact-header h1 {
         font-size: 3rem;
-        color: #1f2937;
+        color: var(--text-color);
         margin-bottom: 1rem;
     }
 
     .subtitle {
         font-size: 1.2rem;
-        color: #6b7280;
+        color: var(--text-color);
+        opacity: 0.8;
     }
 
     .contact-content {
@@ -112,49 +113,51 @@ title: Contact
         align-items: center;
         gap: 0.75rem;
         padding: 1rem;
-        background: white;
+        background: var(--card-bg);
         border-radius: 0.5rem;
         text-decoration: none;
-        color: #1f2937;
+        color: var(--text-color);
         font-weight: 500;
         transition: transform 0.2s, box-shadow 0.2s;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px var(--shadow-color);
+        border: 1px solid var(--border-color);
     }
 
     .social-link:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 6px var(--hover-shadow);
     }
 
     .social-link i {
         font-size: 1.5rem;
-        color: #6366f1;
+        color: var(--accent-color);
     }
 
     .email-section h2 {
         margin-bottom: 1rem;
-        color: #1f2937;
+        color: var(--text-color);
     }
 
     .email-link {
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        color: #6366f1;
+        color: var(--accent-color);
         text-decoration: none;
         font-weight: 500;
         transition: color 0.2s;
     }
 
     .email-link:hover {
-        color: #4f46e5;
+        color: var(--accent-hover);
     }
 
     .contact-form {
-        background: white;
+        background: var(--card-bg);
         padding: 2rem;
         border-radius: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 6px var(--shadow-color);
+        border: 1px solid var(--border-color);
     }
 
     .form-group {
@@ -164,7 +167,7 @@ title: Contact
     .form-group label {
         display: block;
         margin-bottom: 0.5rem;
-        color: #4b5563;
+        color: var(--text-color);
         font-weight: 500;
     }
 
@@ -172,16 +175,18 @@ title: Contact
     .form-group textarea {
         width: 100%;
         padding: 0.75rem;
-        border: 1px solid #e5e7eb;
+        border: 1px solid var(--border-color);
         border-radius: 0.5rem;
         font-size: 1rem;
         transition: border-color 0.2s;
+        background: var(--bg-color);
+        color: var(--text-color);
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
         outline: none;
-        border-color: #6366f1;
+        border-color: var(--accent-color);
     }
 
     .submit-button {
@@ -191,7 +196,7 @@ title: Contact
         gap: 0.5rem;
         width: 100%;
         padding: 1rem;
-        background: #6366f1;
+        background: var(--accent-color);
         color: white;
         border: none;
         border-radius: 0.5rem;
@@ -202,7 +207,7 @@ title: Contact
     }
 
     .submit-button:hover {
-        background: #4f46e5;
+        background: var(--accent-hover);
         transform: translateY(-2px);
     }
 

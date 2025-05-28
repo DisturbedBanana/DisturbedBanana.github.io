@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Project One
-image: /assets/images/project-one.jpg
+image: /assets/images/project-one.png
 itchio_link: https://disturbedbanana.itch.io/project-one
 ---
 
