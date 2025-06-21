@@ -140,14 +140,22 @@ title: Welcome
   .auto-scroll {
     display: flex;
     gap: 2rem;
-    animation: scroll 30s linear infinite;
+    /* animation: scroll 30s linear infinite; */
     width: max-content;
+    cursor: grab;
+    user-select: none; /* Prevent text selection during drag */
   }
 
   .auto-scroll:hover {
-    animation-play-state: paused;
+    /* animation-play-state: paused; */
   }
 
+  .auto-scroll.active {
+    cursor: grabbing;
+  }
+
+  /* Remove the keyframes for the old animation */
+  /*
   @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -156,6 +164,7 @@ title: Welcome
       transform: translateX(-50%);
     }
   }
+  */
 
   @keyframes scroll-bg {
     0% {
@@ -178,6 +187,10 @@ title: Welcome
     min-width: 300px;
     max-width: 300px;
     color: #1f2937;
+  }
+
+  .project-card img {
+    pointer-events: none;
   }
 
   [data-theme="dark"] .project-card {
@@ -232,4 +245,96 @@ title: Welcome
       max-width: 250px;
     }
   }
-</style> 
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.auto-scroll');
+    if (!slider) return;
+
+    let isDragging = false;
+    let startX;
+    let scrollStartX;
+    let animationFrameId;
+
+    let currentX = 0;
+    let velocity = 0;
+    let lastX = 0;
+    let lastTime = 0;
+
+    const scrollSpeed = 0.5;
+    const damping = 0.95;
+    const contentWidth = slider.scrollWidth / 2;
+
+    function animate() {
+        if (!isDragging) {
+            if (Math.abs(velocity) > 0.1) {
+                // Apply momentum and damping
+                currentX += velocity;
+                velocity *= damping;
+            } else {
+                // Apply constant scroll speed
+                velocity = 0;
+                currentX -= scrollSpeed;
+            }
+
+            // Infinite loop logic
+            if (currentX <= -contentWidth) {
+                currentX += contentWidth;
+            } else if (currentX > 0) {
+                currentX -= contentWidth;
+            }
+            slider.style.transform = `translateX(${currentX}px)`;
+        }
+        animationFrameId = requestAnimationFrame(animate);
+    }
+
+    function dragStart(e) {
+        isDragging = true;
+        slider.classList.add('active');
+        velocity = 0; // Reset velocity on new drag
+        startX = e.pageX || e.touches[0].pageX;
+        lastX = startX;
+        lastTime = Date.now();
+        scrollStartX = new DOMMatrix(window.getComputedStyle(slider).transform).m41;
+    }
+
+    function dragMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const mouseX = e.pageX || e.touches[0].pageX;
+        currentX = scrollStartX + mouseX - startX;
+        slider.style.transform = `translateX(${currentX}px)`;
+
+        // Calculate velocity
+        const now = Date.now();
+        const deltaTime = now - lastTime;
+        if (deltaTime > 0) {
+            const dx = mouseX - lastX;
+            velocity = (dx / deltaTime) * 16; // Scale for frame rate
+        }
+        lastX = mouseX;
+        lastTime = now;
+    }
+
+    function dragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        slider.classList.remove('active');
+        // The momentum will be handled by the animate function
+    }
+
+    // Event Listeners
+    slider.addEventListener('mousedown', dragStart);
+    slider.addEventListener('mousemove', dragMove);
+    slider.addEventListener('mouseup', dragEnd);
+    slider.addEventListener('mouseleave', dragEnd);
+
+    slider.addEventListener('touchstart', dragStart, { passive: true });
+    slider.addEventListener('touchmove', dragMove);
+    slider.addEventListener('touchend', dragEnd);
+
+    // Start Animation
+    animate();
+});
+</script> 
