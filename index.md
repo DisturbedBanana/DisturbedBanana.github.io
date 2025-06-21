@@ -99,7 +99,7 @@ title: Welcome
   }
 
   .about-section {
-    background: #f8fafc;
+    background: var(--card-bg);
   }
 
   .about-content {
