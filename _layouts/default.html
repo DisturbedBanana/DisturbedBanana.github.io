@@ -7,19 +7,20 @@
     <meta name="description" content="{{ site.description }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root[data-theme="light"] {
+        :root {
             --bg-color: #ffffff;
             --text-color: #1f2937;
             --text-secondary: #4b5563;
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --hover-shadow: rgba(0, 0, 0, 0.15);
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --hover-shadow: rgba(0, 0, 0, 0.1);
             --accent-color: #6366f1;
             --accent-hover: #4f46e5;
+            --rainbow-gradient-animated: linear-gradient(var(--bg-angle, 0deg), #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c);
         }
 
-        :root[data-theme="dark"] {
+        [data-theme="dark"] {
             --bg-color: #1a1a1a;
             --text-color: #ffffff;
             --text-secondary: #e5e7eb;
