@@ -127,7 +127,7 @@
 <section id="about" class="about-section">
   <h2>About Me</h2>
   <div class="about-content">
-    <p>I'm a passionate developer focused on creating beautiful and functional web experiences. With expertise in modern web technologies, I bring ideas to life through clean code and thoughtful design.</p>
+    <p>As a passionate Gameplay &amp; Tools Developer and UX enthusiast, I focus on creating engaging and intuitive experiences. I specialize in building robust gameplay systems and the custom tools that empower designers to bring their visions to life, always with a sharp eye on clean code and thoughtful user-centered design.</p>
   </div>
 </section>
 
@@ -154,17 +154,39 @@
         <h3 class="project-title">Sweet Melody</h3>
         <p class="project-desc">Survive your first night in a haunted orphanage. Play Sweet Melody on itch.io !</p>
         <a href="/projects/sweet-melody/" class="project-link">Learn More</a>
+      </div><div class="project-card">
+        <img src="/assets/images/iridescence.png" alt="Iridescence" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;" />
+        <h3 class="project-title">Iridescence</h3>
+        <p class="project-desc">A puzzle game about light and color. Play Iridescence on itch.io !</p>
+        <a href="/projects/iridescence/" class="project-link">Learn More</a>
+      </div><div class="project-card">
+        <img src="/assets/images/project-one.png" alt="Project One" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;" />
+        <h3 class="project-title">Project One</h3>
+        <p class="project-desc">A cooperative VR game inspired by Ariane 5 rocket launches. Play Project One on itch.io !</p>
+        <a href="/projects/project-one/" class="project-link">Learn More</a>
+      </div><div class="project-card">
+        <img src="/assets/images/selvage.png" alt="Selvage" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;" />
+        <h3 class="project-title">Selvage</h3>
+        <p class="project-desc">A psychological horror FPS with a berserk mechanic. Play Selvage on itch.io !</p>
+        <a href="/projects/selvage/" class="project-link">Learn More</a>
+      </div><div class="project-card">
+        <img src="/assets/images/sweet-melody.png" alt="Sweet Melody" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;" />
+        <h3 class="project-title">Sweet Melody</h3>
+        <p class="project-desc">Survive your first night in a haunted orphanage. Play Sweet Melody on itch.io !</p>
+        <a href="/projects/sweet-melody/" class="project-link">Learn More</a>
       </div></div>
   </div>
 </section>
 
 <style>
   .hero {
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    background: linear-gradient(135deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6);
+    background-size: 400% 400%;
+    animation: scroll-bg 15s ease infinite;
     color: white;
     text-align: center;
     padding: 2rem;
@@ -265,6 +287,18 @@
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-bg {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 

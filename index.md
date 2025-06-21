@@ -17,7 +17,7 @@ title: Welcome
 <section id="about" class="about-section">
   <h2>About Me</h2>
   <div class="about-content">
-    <p>I'm a passionate developer focused on creating beautiful and functional web experiences. With expertise in modern web technologies, I bring ideas to life through clean code and thoughtful design.</p>
+    <p>As a passionate Gameplay & Tools Developer and UX enthusiast, I focus on creating engaging and intuitive experiences. I specialize in building robust gameplay systems and the custom tools that empower designers to bring their visions to life, always with a sharp eye on clean code and thoughtful user-centered design.</p>
   </div>
 </section>
 
@@ -29,7 +29,15 @@ title: Welcome
       <div class="project-card">
         <img src="{{ project.image }}" alt="{{ project.title }}" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;">
         <h3 class="project-title">{{ project.title }}</h3>
-        <p class="project-desc">{{ project.excerpt | strip_html | truncate: 120 }}</p>
+        <p class="project-desc">{{ project.excerpt }}</p>
+        <a href="{{ project.url }}" class="project-link">Learn More</a>
+      </div>
+      {%- endfor -%}
+      {%- for project in site.projects -%}
+      <div class="project-card">
+        <img src="{{ project.image }}" alt="{{ project.title }}" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-desc">{{ project.excerpt }}</p>
         <a href="{{ project.url }}" class="project-link">Learn More</a>
       </div>
       {%- endfor -%}
@@ -39,11 +47,13 @@ title: Welcome
 
 <style>
   .hero {
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    background: linear-gradient(135deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6);
+    background-size: 400% 400%;
+    animation: scroll-bg 15s ease infinite;
     color: white;
     text-align: center;
     padding: 2rem;
@@ -144,6 +154,18 @@ title: Welcome
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-bg {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 
