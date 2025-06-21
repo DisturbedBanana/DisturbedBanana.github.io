@@ -22,7 +22,7 @@ title: Welcome
 </section>
 
 <section id="skills" class="skills-section">
-  <h2>My Skills</h2>
+  <h2 class="section-title">My Skills</h2>
   <div class="skills-grid">
     <div class="skill-category">
       <h3>Technical Skills</h3>
@@ -63,30 +63,49 @@ title: Welcome
 </section>
 
 <section id="projects" class="projects-section">
-  <h2>Featured Projects</h2>
-  <div class="auto-scroll-container">
-    <div class="auto-scroll">
-      {%- for project in site.projects -%}
-      <div class="project-card">
-        <img src="{{ project.image }}" alt="{{ project.title }}" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;">
-        <h3 class="project-title">{{ project.title }}</h3>
-        <p class="project-desc">{{ project.excerpt }}</p>
-        <a href="{{ project.url }}" class="project-link">View Details</a>
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-carousel">
+    <button class="carousel-button prev" aria-label="Previous project">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    
+    <div class="carousel-container">
+      <div class="carousel-track">
+        {% for project in site.projects %}
+          <div class="project-slide" data-index="{{ forloop.index0 }}">
+            <div class="project-card">
+              <div class="project-image-container">
+                <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-image">
+              </div>
+              <div class="card-content">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.excerpt }}</p>
+                <a href="{{ project.url | relative_url }}" class="project-link">View Details</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
       </div>
-      {%- endfor -%}
-      {%- for project in site.projects -%}
-      <div class="project-card">
-        <img src="{{ project.image }}" alt="{{ project.title }}" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;">
-        <h3 class="project-title">{{ project.title }}</h3>
-        <p class="project-desc">{{ project.excerpt }}</p>
-        <a href="{{ project.url }}" class="project-link">View Details</a>
-      </div>
-      {%- endfor -%}
     </div>
+    
+    <button class="carousel-button next" aria-label="Next project">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+  </div>
+  
+  <div class="carousel-indicators">
+    {% for project in site.projects %}
+      <button class="indicator" data-index="{{ forloop.index0 }}" aria-label="Go to project {{ forloop.index }}"></button>
+    {% endfor %}
   </div>
 </section>
 
 <style>
+  /* Hero Section */
   .hero {
     min-height: 60vh;
     display: flex;
@@ -143,21 +162,28 @@ title: Welcome
     color: white;
   }
 
+  /* General Section Styling */
   section {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
   }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
 
+  /* About Me Section */
   .about-section {
     background: var(--card-bg);
     width: 100vw;
     max-width: none;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    padding-left: 0;
-    padding-right: 0;
-    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .about-section h2 {
@@ -168,8 +194,10 @@ title: Welcome
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+    text-align: center;
   }
 
+  /* Skills Section */
   .skills-section {
     text-align: center;
   }
@@ -214,8 +242,7 @@ title: Welcome
     padding: 0.5rem 1.25rem;
     border-radius: 9999px;
     font-weight: 500;
-    box-shadow: 0 2px 4px var(--shadow-color);
-    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.2s ease, color 0.2s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, color 0.2s ease;
     opacity: 0;
     transform: translateY(20px);
     user-select: none;
@@ -224,45 +251,60 @@ title: Welcome
     background: transparent;
   }
 
-  .skill-badge::before, .skill-badge::after {
+  .skill-badge::before,
+  .skill-badge::after {
     content: '';
     position: absolute;
     border-radius: inherit;
   }
 
-  .skill-badge::after { /* Solid Background Layer */
-    top: 0; left: 0; right: 0; bottom: 0;
+  .skill-badge::after {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: var(--card-bg);
     z-index: -1;
   }
 
-  .skill-badge::before { /* Animated Border Layer */
-    top: -2px; left: -2px; right: -2px; bottom: -2px;
-    background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c);
-    background-size: 400%;
+  .skill-badge::before {
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--rainbow-gradient-animated);
+    background-size: 200% 200%;
     z-index: -2;
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
-    animation: rainbow-shift 4s linear infinite;
+    animation: rainbow-bg 3s linear infinite;
   }
 
   .skill-badge:hover {
     color: var(--accent-color);
-    box-shadow: 0 6px 12px var(--hover-shadow);
   }
-  
+
   .skill-badge:hover::before {
     opacity: 1;
   }
 
   .skill-badge.core-skill {
     color: var(--accent-color);
-    border: 1px solid var(--accent-color);
     animation: pulse-glow 3s infinite ease-in-out;
   }
-  
+
+  .skill-badge.core-skill:hover {
+    animation-play-state: paused;
+  }
+
+  .skill-badge.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @keyframes pulse-glow {
-    0%, 100% {
+    0%,
+    100% {
       box-shadow: 0 0 5px 0px var(--accent-color);
     }
     50% {
@@ -270,245 +312,299 @@ title: Welcome
     }
   }
 
-  .skill-badge.visible {
-      opacity: 1;
-      transform: translateY(0);
+  @keyframes rainbow-bg {
+    to {
+      --bg-angle: 360deg;
+    }
   }
 
-  @keyframes rainbow-shift {
+  @property --bg-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes scroll-bg {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
 
-  .skill-badge.core-skill:hover {
-      animation-play-state: paused;
-  }
 
-  /* Auto-scrolling projects section */
-  .auto-scroll-container {
-    width: 100%;
-    overflow: hidden;
+  /* Projects Section */
+  .projects-section {
+    text-align: center;
+  }
+  
+  .projects-carousel {
     position: relative;
-    padding: 2rem 0;
+    max-width: 960px;
+    margin: 0 auto;
   }
-
-  .auto-scroll {
+  
+  .carousel-container {
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .carousel-track {
     display: flex;
-    gap: 2rem;
-    /* animation: scroll 30s linear infinite; */
-    width: max-content;
-    cursor: grab;
-    user-select: none; /* Prevent text selection during drag */
   }
-
-  .auto-scroll:hover {
-    /* animation-play-state: paused; */
+  
+  .project-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    padding: 0 5px; /* Add small padding to prevent touching edges */
   }
-
-  .auto-scroll.active {
-    cursor: grabbing;
-  }
-
-  /* Remove the keyframes for the old animation */
-  /*
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  */
-
-  @keyframes scroll-bg {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
+  
   .project-card {
-    background: white;
+    background-color: transparent;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    height: 100%;
+  }
+
+  .project-card::before,
+  .project-card::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+  }
+
+  .project-card::after { /* Solid Background Layer */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--card-bg);
+    z-index: -1;
+  }
+
+  .project-card::before { /* Animated Border Layer */
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: var(--rainbow-gradient-animated);
+    background-size: 200% 200%;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    animation: rainbow-bg 3s linear infinite;
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+  
+  .project-image-container {
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 15px; /* Added to round corners */
+    border-top-right-radius: 15px; /* Added to round corners */
+    overflow: hidden; /* Added to clip the image inside */
+  }
+
+  .project-card .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .project-card .card-content {
     padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-    transition: transform 0.2s;
-    min-width: 300px;
-    max-width: 300px;
-    color: #1f2937;
+    text-align: left;
   }
-
-  .project-card img {
-    pointer-events: none;
+  
+  .project-card .card-content h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
   }
-
-  [data-theme="dark"] .project-card {
-    background: #2d2d2d;
-    color: #fff;
+  
+  .project-card .card-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    min-height: auto; /* Remove reserved space */
   }
-
-  .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px var(--hover-shadow);
-  }
-
+  
   .project-link {
     display: inline-block;
-    margin-top: 1rem;
-    color: #6366f1;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
     text-decoration: none;
+    border-radius: 8px;
     font-weight: 600;
-    transition: color 0.2s;
+    transition: background-color 0.3s ease;
   }
-
+  
   .project-link:hover {
-    color: #4f46e5;
+    background: var(--accent-hover);
+  }
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-button.prev {
+    left: 1rem;
+  }
+  
+  .carousel-button.next {
+    right: 1rem;
+  }
+  
+  .carousel-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .carousel-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .indicator.active {
+    background: var(--accent-color);
+    transform: scale(1.2);
+  }
+  
+  .indicator:hover {
+    background: var(--accent-color);
   }
 
-  .project-title {
-    color: #1f2937;
-  }
-
-  [data-theme="dark"] .project-title {
-    color: #fff;
-  }
-
-  .project-desc {
-    color: #4b5563;
-  }
-
-  [data-theme="dark"] .project-desc {
-    color: #e5e7eb;
-  }
-
+  /* Media Queries for Responsiveness */
   @media (max-width: 768px) {
     .hero h1 {
       font-size: 2.5rem;
     }
-    
     .cta-buttons {
       flex-direction: column;
-    }
-
-    .project-card {
-      min-width: 250px;
-      max-width: 250px;
     }
   }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.auto-scroll');
-    if (!slider) return;
-
-    let isDragging = false;
-    let startX;
-    let scrollStartX;
-    let animationFrameId;
-
-    let currentX = 0;
-    let velocity = 0;
-    let lastX = 0;
-    let lastTime = 0;
-
-    const scrollSpeed = 0.5;
-    const damping = 0.95;
-    const contentWidth = slider.scrollWidth / 2;
-
-    function animate() {
-        if (!isDragging) {
-            if (Math.abs(velocity) > 0.1) {
-                // Apply momentum and damping
-                currentX += velocity;
-                velocity *= damping;
-            } else {
-                // Apply constant scroll speed
-                velocity = 0;
-                currentX -= scrollSpeed;
-            }
-
-            // Infinite loop logic
-            if (currentX <= -contentWidth) {
-                currentX += contentWidth;
-            } else if (currentX > 0) {
-                currentX -= contentWidth;
-            }
-            slider.style.transform = `translateX(${currentX}px)`;
-        }
-        animationFrameId = requestAnimationFrame(animate);
-    }
-
-    function dragStart(e) {
-        isDragging = true;
-        slider.classList.add('active');
-        velocity = 0; // Reset velocity on new drag
-        startX = e.pageX || e.touches[0].pageX;
-        lastX = startX;
-        lastTime = Date.now();
-        scrollStartX = new DOMMatrix(window.getComputedStyle(slider).transform).m41;
-    }
-
-    function dragMove(e) {
-        if (!isDragging) return;
-        e.preventDefault();
-        const mouseX = e.pageX || e.touches[0].pageX;
-        currentX = scrollStartX + mouseX - startX;
-        slider.style.transform = `translateX(${currentX}px)`;
-
-        // Calculate velocity
-        const now = Date.now();
-        const deltaTime = now - lastTime;
-        if (deltaTime > 0) {
-            const dx = mouseX - lastX;
-            velocity = (dx / deltaTime) * 16; // Scale for frame rate
-        }
-        lastX = mouseX;
-        lastTime = now;
-    }
-
-    function dragEnd() {
-        if (!isDragging) return;
-        isDragging = false;
-        slider.classList.remove('active');
-        // The momentum will be handled by the animate function
-    }
-
-    // Event Listeners
-    slider.addEventListener('mousedown', dragStart);
-    slider.addEventListener('mousemove', dragMove);
-    slider.addEventListener('mouseup', dragEnd);
-    slider.addEventListener('mouseleave', dragEnd);
-
-    slider.addEventListener('touchstart', dragStart, { passive: true });
-    slider.addEventListener('touchmove', dragMove);
-    slider.addEventListener('touchend', dragEnd);
-
-    // Start Animation
-    animate();
-
-    // Skills section animation
+  document.addEventListener('DOMContentLoaded', () => {
+    // Staggered fade-in for skills
     const skillBadges = document.querySelectorAll('.skill-badge');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
+    const skillObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
     }, {
-        threshold: 0.5 // Trigger when 50% of the element is visible
+      threshold: 0.5
+    });
+    skillBadges.forEach((badge, index) => {
+      badge.style.transitionDelay = `${index * 100}ms`;
+      skillObserver.observe(badge);
     });
 
-    skillBadges.forEach((badge, index) => {
-        badge.style.transitionDelay = `${index * 100}ms`;
-        observer.observe(badge);
-    });
-});
+    // Carousel functionality
+    const carouselTrack = document.querySelector('.carousel-track');
+    if (carouselTrack) {
+      const slides = Array.from(carouselTrack.children);
+      const prevButton = document.querySelector('.carousel-button.prev');
+      const nextButton = document.querySelector('.carousel-button.next');
+      const indicators = document.querySelectorAll('.indicator');
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      if (totalSlides > 0) {
+        function updateCarouselPosition() {
+          const slideWidth = slides[0].getBoundingClientRect().width;
+          const newTransform = -currentIndex * slideWidth;
+          carouselTrack.style.transform = `translateX(${newTransform}px)`;
+        }
+
+        function updateCarouselUI() {
+          indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+          });
+          if(prevButton && nextButton) {
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex === totalSlides - 1;
+          }
+        }
+
+        function goToSlide(index) {
+          carouselTrack.style.transition = 'transform 0.5s ease-in-out';
+          currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+          updateCarouselPosition();
+          updateCarouselUI();
+        }
+        
+        if(prevButton && nextButton) {
+            prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
+            nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
+        }
+        
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => goToSlide(index));
+        });
+        
+        document.addEventListener('keydown', (e) => {
+          const isCarouselFocused = document.activeElement.closest('.projects-carousel');
+          if (isCarouselFocused) {
+              if (e.key === 'ArrowLeft') {
+                  e.preventDefault();
+                  goToSlide(currentIndex - 1);
+              } else if (e.key === 'ArrowRight') {
+                  e.preventDefault();
+                  goToSlide(currentIndex + 1);
+              }
+          }
+        });
+
+        window.addEventListener('resize', () => {
+          carouselTrack.style.transition = 'none';
+          updateCarouselPosition();
+        });
+
+        // Initial setup
+        updateCarouselUI();
+      }
+    }
+  });
 </script> 
