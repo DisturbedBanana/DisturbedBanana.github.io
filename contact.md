@@ -230,7 +230,10 @@ title: Contact
     }
 
     .back-to-main {
-        display: inline-flex;
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        display: flex;
         align-items: center;
         gap: 0.5rem;
         background: var(--card-bg);
@@ -240,13 +243,20 @@ title: Contact
         padding: 0.75rem 1.5rem;
         text-decoration: none;
         font-weight: 600;
-        margin-bottom: 2rem;
         box-shadow: 0 2px 4px var(--shadow-color);
         transition: transform 0.2s, box-shadow 0.2s;
+        z-index: 100;
+        margin-bottom: 0;
     }
     .back-to-main:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 6px var(--hover-shadow);
         color: var(--accent-hover);
+    }
+    @media (max-width: 768px) {
+        .back-to-main {
+            top: 1rem;
+            left: 1rem;
+        }
     }
 </style> 
