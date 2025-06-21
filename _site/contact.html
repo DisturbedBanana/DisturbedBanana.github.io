@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - My Portfolio</title>
+    <meta name="description" content="Welcome to my portfolio website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root[data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #1f2937;
+            --text-secondary: #4b5563;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --hover-shadow: rgba(0, 0, 0, 0.15);
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+        }
+
+        :root[data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --text-secondary: #e5e7eb;
+            --card-bg: #2d2d2d;
+            --border-color: #404040;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --hover-shadow: rgba(0, 0, 0, 0.4);
+            --accent-color: #818cf8;
+            --accent-hover: #6366f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            color: var(--text-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--hover-shadow);
+        }
+
+        .theme-toggle i {
+            transition: transform 0.5s;
+        }
+
+        [data-theme="dark"] .theme-toggle i {
+            transform: rotate(180deg);
+        }
+
+        /* Dark mode specific styles */
+        [data-theme="dark"] .social-link,
+        [data-theme="dark"] .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group textarea {
+            background: var(--bg-color);
+            border-color: var(--border-color);
+            color: var(--text-color);
+        }
+
+        [data-theme="dark"] .form-group input:focus,
+        [data-theme="dark"] .form-group textarea:focus {
+            border-color: var(--accent-color);
+        }
+
+        [data-theme="dark"] .form-group label {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/" class="back-to-main">
+  <i class="fas fa-arrow-left"></i> Back to Main Page
+</a></p>
+
+<div class="contact-container">
+    <div class="contact-header">
+        <h1>Get in Touch</h1>
+        <p class="subtitle">Let's discuss your next project or opportunity</p>
+    </div>
+
+    <div class="contact-content">
+        <div class="contact-info">
+            <div class="social-links">
+                <a href="https://github.com/disturbedbanana" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/lucas-guichard-link/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://itch.io/profile/disturbedbanana" class="social-link" target="_blank">
+                    <i class="fas fa-gamepad"></i>
+                    <span>itch.io</span>
+                </a>
+            </div>
+
+            <div class="email-section">
+                <h2>Email</h2>
+                <a href="mailto:lucasguichard78@gmail.com" class="email-link">
+                    <i class="fas fa-envelope"></i>
+                    lucasguichard78@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form action="https://formspree.io/f/mzzrnywb" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required="" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required="" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required="" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required=""></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+
+    .contact-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .contact-header h1 {
+        font-size: 3rem;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: var(--card-bg);
+        border-radius: 0.5rem;
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 2px 4px var(--shadow-color);
+        border: 1px solid var(--border-color);
+    }
+
+    .social-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px var(--hover-shadow);
+    }
+
+    .social-link i {
+        font-size: 1.5rem;
+        color: var(--accent-color);
+    }
+
+    .email-section h2 {
+        margin-bottom: 1rem;
+        color: var(--text-color);
+    }
+
+    .email-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .email-link:hover {
+        color: var(--accent-hover);
+    }
+
+    .contact-form {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px var(--shadow-color);
+        border: 1px solid var(--border-color);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent-color);
+    }
+
+    .submit-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 1rem;
+        background: var(--accent-color);
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .submit-button:hover {
+        background: var(--accent-hover);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+        }
+
+        .social-links {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .back-to-main {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--card-bg);
+        color: var(--accent-color);
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 2px 4px var(--shadow-color);
+        transition: transform 0.2s, box-shadow 0.2s;
+        z-index: 100;
+        margin-bottom: 0;
+    }
+    .back-to-main:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px var(--hover-shadow);
+        color: var(--accent-hover);
+    }
+    @media (max-width: 768px) {
+        .back-to-main {
+            top: 1rem;
+            left: 1rem;
+        }
+    }
+</style>
+
+
+    
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script>
+        // Set dark mode as default
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+    </script>
+</body>
+</html> 

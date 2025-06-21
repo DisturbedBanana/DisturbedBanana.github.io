@@ -1,24 +1,73 @@
----
-layout: project
-title: Iridescence
-image: /assets/images/iridescence.png
-itchio_link: https://zukkinioni.itch.io/iridescence
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iridescence - My Portfolio</title>
+    <meta name="description" content="Welcome to my portfolio website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<div class="project-container">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: #1f2937;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .back-button {
+                top: 1rem;
+                left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Back to Portfolio
+    </a>
+    <div class="project-container">
     <div class="project-header">
-        <h1>{{ page.title }}</h1>
-        <a href="{{ page.itchio_link }}" class="itchio-button" target="_blank">
-            <img src="https://static.itch.io/images/badge-color.svg" alt="itch.io">
-            Play {{ page.title }} on itch.io !
+        <h1>Iridescence</h1>
+        <a href="https://zukkinioni.itch.io/iridescence" class="itchio-button" target="_blank">
+            <img src="https://static.itch.io/images/badge-color.svg" alt="itch.io" />
+            Play on itch.io
         </a>
     </div>
     <div class="project-content">
         <div class="project-description">
             <h2>About the Project</h2>
-            <p><strong>Platform:</strong> Android<br>
-            <strong>Genre:</strong> Puzzle<br>
-            <strong>Description:</strong> Use light reflection and color additivity to solve puzzles! Help Undine, Dwarfy and Goaty, 3 colored friends to restore the holy light. Redirect the crystal's beam and recolor it, find the right angles, the perfect color mix, and revive every light of the forest.<br>
+            <p><strong>Platform:</strong> Android<br />
+            <strong>Genre:</strong> Puzzle<br />
+            <strong>Description:</strong> Use light reflection and color additivity to solve puzzles! Help Undine, Dwarfy and Goaty, 3 colored friends to restore the holy light. Redirect the crystal's beam and recolor it, find the right angles, the perfect color mix, and revive every light of the forest.<br />
             <strong>Download:</strong> <a href="https://zukkinioni.itch.io/iridescence" target="_blank">itch.io</a></p>
             <h2>Team</h2>
             <ul>
@@ -126,4 +175,8 @@ itchio_link: https://zukkinioni.itch.io/iridescence
             text-align: center;
         }
     }
-</style> 
+</style>
+
+
+</body>
+</html> 

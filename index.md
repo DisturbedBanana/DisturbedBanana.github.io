@@ -100,6 +100,17 @@ title: Welcome
 
   .about-section {
     background: var(--card-bg);
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .about-section h2 {
+    text-align: center;
   }
 
   .about-content {
