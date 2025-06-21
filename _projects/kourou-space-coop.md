@@ -1,159 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selvage - My Portfolio</title>
-    <meta name="description" content="Welcome to my portfolio website">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #1f2937;
-            --text-secondary: #4b5563;
-            --card-bg: #ffffff;
-            --border-color: #e5e7eb;
-            --shadow-color: rgba(0, 0, 0, 0.05);
-            --hover-shadow: rgba(0, 0, 0, 0.1);
-            --accent-color: #6366f1;
-            --accent-hover: #4f46e5;
-            --rainbow-gradient-animated: linear-gradient(var(--bg-angle, 0deg), #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c);
-        }
+---
+layout: project
+title: Kourou Space Coop
+image: /assets/images/kourou-space-coop.png
+itchio_link: https://atsue.itch.io/kourou-space-coop
+excerpt: "A cooperative VR game inspired by Ariane 5 rocket launches. Play Kourou Space Coop on itch.io !"
+---
 
-        [data-theme="dark"] {
-            --bg-color: #1a1a1a;
-            --text-color: #ffffff;
-            --text-secondary: #e5e7eb;
-            --card-bg: #2d2d2d;
-            --border-color: #404040;
-            --shadow-color: rgba(0, 0, 0, 0.3);
-            --hover-shadow: rgba(0, 0, 0, 0.4);
-            --accent-color: #818cf8;
-            --accent-hover: #6366f1;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            transition: background-color 0.3s, color 0.3s;
-            padding-top: 60px; /* Space for the sticky header */
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 1rem;
-            color: var(--text-color);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .theme-toggle {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background: var(--card-bg);
-            border: 2px solid var(--border-color);
-            color: var(--text-color);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            box-shadow: 0 2px 8px var(--shadow-color);
-            transition: transform 0.2s, box-shadow 0.2s;
-            z-index: 1000;
-        }
-
-        .theme-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px var(--hover-shadow);
-        }
-
-        .theme-toggle i {
-            transition: transform 0.5s;
-        }
-
-        [data-theme="dark"] .theme-toggle i {
-            transform: rotate(180deg);
-        }
-
-        /* Dark mode specific styles */
-        [data-theme="dark"] .social-link,
-        [data-theme="dark"] .contact-form {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-        }
-
-        [data-theme="dark"] .form-group input,
-        [data-theme="dark"] .form-group textarea {
-            background: var(--bg-color);
-            border-color: var(--border-color);
-            color: var(--text-color);
-        }
-
-        [data-theme="dark"] .form-group input:focus,
-        [data-theme="dark"] .form-group textarea:focus {
-            border-color: var(--accent-color);
-        }
-
-        [data-theme="dark"] .form-group label {
-            color: var(--text-secondary);
-        }
-
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1rem 2rem;
-            background: var(--card-bg);
-            box-shadow: 0 2px 5px var(--shadow-color);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            transition: background-color 0.3s;
-        }
-
-        .site-nav {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--accent-color);
-        }
-    </style>
-</head>
-<body>
-    <header class="site-header">
-    <nav class="site-nav">
-        <a href="/#home" class="nav-link">Home</a>
-        <a href="/#about" class="nav-link">About</a>
-        <a href="/#projects" class="nav-link">Projects</a>
-        <a href="/contact" class="nav-link">Contact</a>
-    </nav>
-</header> 
-    <div class="project-container">
+<div class="project-container">
     <!-- Animated background elements -->
     <div class="project-bg-patterns">
         <div class="floating-elements">
@@ -167,34 +20,34 @@
     </div>
 
     <div class="project-header">
-        <h1>Selvage</h1>
-        <a href="https://nuclos.itch.io/selvage" class="itchio-button" target="_blank">
+        <h1>{{ page.title }}</h1>
+        <a href="{{ page.itchio_link }}" class="itchio-button" target="_blank">
             <div class="itchio-icon">
-                <img src="https://static.itch.io/images/badge-color.svg" alt="itch.io" />
+                <img src="https://static.itch.io/images/badge-color.svg" alt="itch.io">
             </div>
-            <span>Play Selvage on itch.io !</span>
+            <span>Play {{ page.title }} on itch.io !</span>
         </a>
     </div>
     
     <div class="project-content">
         <div class="project-image-container">
             <div class="project-image">
-                <img src="/assets/images/selvage.png" alt="Selvage" />
+                <img src="{{ page.image }}" alt="{{ page.title }}">
             </div>
         </div>
         
         <div class="project-description">
             <h2>About the Project</h2>
-            <p><strong>Platform:</strong> PC<br />
-            <strong>Genre:</strong> Shooter, Action, Adventure, Platformer, Psychological Horror<br />
-            <strong>Description:</strong> You're a person who just found themselves in a dark and strange location with monsters coming at you that you can fight with fire arms you find along the way. Low on HP, low ammo or low mental health? PTSD triggers, you go Berserk. You run faster and perform better, you just want to get out as fast as possible.<br />
-            <strong>Download:</strong> <a href="https://nuclos.itch.io/selvage" target="_blank" class="download-link">itch.io</a></p>
+            <p><strong>Platform:</strong> VR<br>
+            <strong>Genre:</strong> Puzzle, Co-op<br>
+            <strong>Description:</strong> In Kourou Space Coop, two players will have to cooperate to carry out the various emblematic missions of Ariane 5. Each player will have their own specific gameplay, one player is in the control base in Kourou while the other controls an assistance robot located inside the launcher. Together, they will have to communicate in order to carry out different tasks to successfully complete the mission.<br>
+            <strong>Download:</strong> <a href="https://atsue.itch.io/kourou-space-coop" target="_blank" class="download-link">itch.io</a></p>
             
             <h2>Team</h2>
             <ul>
-                <li>GD: William Ferreira, Maxime Champroux, Alvi Frémont</li>
-                <li>GA: Angela Tran, Morgane Huynh-perez, Reda Lotfi</li>
-                <li>GP: Lucas Guichard, Léopold Leclerc, Clément Bostyn</li>
+                <li>Game Artists: Flora DENIS, Morgan HUYNH-PEREZ, Enzo DE CORTE, Melvin LITIERE</li>
+                <li>Game Designers: Eliass GODSON, Nicolas COULLIAIS</li>
+                <li>Game Programmers: Nicolas KOHLER, Lucas GUICHARD</li>
             </ul>
         </div>
     </div>
@@ -239,7 +92,7 @@
     .float-1 {
         width: 70px;
         height: 70px;
-        background: linear-gradient(45deg, #2c3e50, rgba(44, 62, 80, 0.3));
+        background: linear-gradient(45deg, #3498db, rgba(52, 152, 219, 0.3));
         border-radius: 50%;
         top: 20%;
         left: 8%;
@@ -249,7 +102,7 @@
     .float-2 {
         width: 50px;
         height: 50px;
-        background: linear-gradient(45deg, #e74c3c, rgba(231, 76, 60, 0.3));
+        background: linear-gradient(45deg, #2ecc71, rgba(46, 204, 113, 0.3));
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         top: 75%;
         right: 12%;
@@ -259,7 +112,7 @@
     .float-3 {
         width: 90px;
         height: 90px;
-        background: linear-gradient(45deg, #34495e, rgba(52, 73, 94, 0.3));
+        background: linear-gradient(45deg, #f39c12, rgba(243, 156, 18, 0.3));
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
         top: 30%;
         right: 20%;
@@ -269,7 +122,7 @@
     .float-4 {
         width: 60px;
         height: 60px;
-        background: linear-gradient(45deg, #c0392b, rgba(192, 57, 43, 0.3));
+        background: linear-gradient(45deg, #1abc9c, rgba(26, 188, 156, 0.3));
         border-radius: 10px;
         top: 85%;
         left: 15%;
@@ -282,8 +135,8 @@
         width: 100%;
         height: 100%;
         background-image: 
-            linear-gradient(rgba(44, 62, 80, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(44, 62, 80, 0.03) 1px, transparent 1px);
+            linear-gradient(rgba(52, 152, 219, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(52, 152, 219, 0.03) 1px, transparent 1px);
         background-size: 45px 45px;
         animation: pattern-move-project 35s linear infinite;
     }
@@ -294,8 +147,8 @@
         width: 100%;
         height: 100%;
         background-image: 
-            radial-gradient(circle at 25% 25%, rgba(44, 62, 80, 0.08) 1px, transparent 1px),
-            radial-gradient(circle at 75% 75%, rgba(231, 76, 60, 0.08) 1px, transparent 1px);
+            radial-gradient(circle at 25% 25%, rgba(52, 152, 219, 0.08) 1px, transparent 1px),
+            radial-gradient(circle at 75% 75%, rgba(46, 204, 113, 0.08) 1px, transparent 1px);
         background-size: 90px 90px, 130px 130px;
         animation: particle-drift-project 28s ease-in-out infinite;
     }
@@ -312,13 +165,13 @@
 
     .project-header h1 {
         font-size: 3.5rem;
-        background: linear-gradient(45deg, var(--text-color), #2c3e50, var(--text-color));
+        background: linear-gradient(45deg, var(--text-color), #3498db, var(--text-color));
         background-size: 200% 200%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         animation: text-shimmer-project 4s ease-in-out infinite;
-        text-shadow: 0 0 30px rgba(44, 62, 80, 0.3);
+        text-shadow: 0 0 30px rgba(52, 152, 219, 0.3);
     }
 
     /* Itch.io Button */
@@ -415,7 +268,7 @@
         left: 0;
         right: 0;
         height: 3px;
-        background: linear-gradient(90deg, #2c3e50, #34495e, #e74c3c, #c0392b, #2c3e50);
+        background: linear-gradient(90deg, #3498db, #2ecc71, #f39c12, #1abc9c, #3498db);
         background-size: 200% 100%;
         animation: rainbow-flow-project 4s linear infinite;
     }
@@ -453,7 +306,7 @@
         left: 0;
         right: 0;
         height: 3px;
-        background: linear-gradient(90deg, #2c3e50, #34495e, #e74c3c, #c0392b, #2c3e50);
+        background: linear-gradient(90deg, #3498db, #2ecc71, #f39c12, #1abc9c, #3498db);
         background-size: 200% 100%;
         animation: rainbow-flow-project 4s linear infinite;
     }
@@ -475,7 +328,7 @@
     }
 
     .download-link {
-        color: #2c3e50;
+        color: #3498db;
         text-decoration: none;
         font-weight: 600;
         transition: all 0.3s ease;
@@ -489,7 +342,7 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: linear-gradient(90deg, #2c3e50, #e74c3c);
+        background: linear-gradient(90deg, #3498db, #2ecc71);
         transition: width 0.3s ease;
     }
 
@@ -498,8 +351,8 @@
     }
 
     .download-link:hover {
-        color: #e74c3c;
-        text-shadow: 0 0 10px rgba(44, 62, 80, 0.3);
+        color: #2ecc71;
+        text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
     }
 
     .project-description ul {
@@ -515,7 +368,7 @@
 
     .project-description li::before {
         content: '▸';
-        color: #2c3e50;
+        color: #3498db;
         font-weight: bold;
         position: absolute;
         left: -1.2rem;
@@ -584,32 +437,4 @@
             padding: 2rem;
         }
     }
-</style>
-
- 
-    
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-    </button>
-
-    <script>
-        // Set dark mode as default
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const savedTheme = localStorage.getItem('theme');
-        
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        }
-    </script>
-</body>
-</html> 
+</style> 
