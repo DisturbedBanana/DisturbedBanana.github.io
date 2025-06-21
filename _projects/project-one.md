@@ -3,6 +3,7 @@ layout: project
 title: Project One
 image: /assets/images/project-one.png
 itchio_link: https://atsue.itch.io/kourou-space-coop
+excerpt: "A cooperative VR game inspired by Ariane 5 rocket launches. Play Project One on itch.io !"
 ---
 
 <div class="project-container">

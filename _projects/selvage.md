@@ -3,6 +3,7 @@ layout: project
 title: Selvage
 image: /assets/images/selvage.png
 itchio_link: https://nuclos.itch.io/selvage
+excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on itch.io !"
 ---
 
 <div class="project-container">
