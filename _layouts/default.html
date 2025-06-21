@@ -43,6 +43,7 @@
             color: var(--text-color);
             background-color: var(--bg-color);
             transition: background-color 0.3s, color 0.3s;
+            padding-top: 60px; /* Space for the sticky header */
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -110,9 +111,40 @@
         [data-theme="dark"] .form-group label {
             color: var(--text-secondary);
         }
+
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 2rem;
+            background: var(--card-bg);
+            box-shadow: 0 2px 5px var(--shadow-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .site-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color);
+        }
     </style>
 </head>
 <body>
+    {% include header.html %}
     {{ content }}
     
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">

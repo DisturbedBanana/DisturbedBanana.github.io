@@ -21,6 +21,47 @@ title: Welcome
   </div>
 </section>
 
+<section id="skills" class="skills-section">
+  <h2>My Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h3>Technical Skills</h3>
+      <div class="skills--sub-category">
+        <h4>Languages</h4>
+        <div class="skills-container">
+          <span class="skill-badge core-skill">C#</span>
+          <span class="skill-badge core-skill">C++</span>
+        </div>
+      </div>
+      <div class="skills-sub-category">
+        <h4>Game Engines</h4>
+        <div class="skills-container">
+          <span class="skill-badge core-skill">Unity</span>
+          <span class="skill-badge core-skill">Unreal Engine</span>
+        </div>
+      </div>
+      <div class="skills-sub-category">
+        <h4>Tools & Platforms</h4>
+        <div class="skills-container">
+          <span class="skill-badge">Jira</span>
+          <span class="skill-badge">Github</span>
+          <span class="skill-badge">Figma</span>
+        </div>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>Soft Skills</h3>
+      <div class="skills-container">
+        <span class="skill-badge">Design Thinking</span>
+        <span class="skill-badge">Problem Solving</span>
+        <span class="skill-badge">Team Collaboration</span>
+        <span class="skill-badge">Agile Methodologies</span>
+        <span class="skill-badge">User-Centric Design</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="projects" class="projects-section">
   <h2>Featured Projects</h2>
   <div class="auto-scroll-container">
@@ -30,7 +71,7 @@ title: Welcome
         <img src="{{ project.image }}" alt="{{ project.title }}" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;">
         <h3 class="project-title">{{ project.title }}</h3>
         <p class="project-desc">{{ project.excerpt }}</p>
-        <a href="{{ project.url }}" class="project-link">Learn More</a>
+        <a href="{{ project.url }}" class="project-link">View Details</a>
       </div>
       {%- endfor -%}
       {%- for project in site.projects -%}
@@ -38,7 +79,7 @@ title: Welcome
         <img src="{{ project.image }}" alt="{{ project.title }}" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;">
         <h3 class="project-title">{{ project.title }}</h3>
         <p class="project-desc">{{ project.excerpt }}</p>
-        <a href="{{ project.url }}" class="project-link">Learn More</a>
+        <a href="{{ project.url }}" class="project-link">View Details</a>
       </div>
       {%- endfor -%}
     </div>
@@ -129,6 +170,121 @@ title: Welcome
     line-height: 1.6;
   }
 
+  .skills-section {
+    text-align: center;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .skill-category h3 {
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+  }
+
+  .skills-sub-category {
+    margin-top: 1.5rem;
+  }
+
+  .skills-sub-category h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .skill-badge {
+    color: var(--text-secondary);
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.2s ease, color 0.2s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    user-select: none;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+  }
+
+  .skill-badge::before, .skill-badge::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+  }
+
+  .skill-badge::after { /* Solid Background Layer */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--card-bg);
+    z-index: -1;
+  }
+
+  .skill-badge::before { /* Animated Border Layer */
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c);
+    background-size: 400%;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    animation: rainbow-shift 4s linear infinite;
+  }
+
+  .skill-badge:hover {
+    color: var(--accent-color);
+    box-shadow: 0 6px 12px var(--hover-shadow);
+  }
+  
+  .skill-badge:hover::before {
+    opacity: 1;
+  }
+
+  .skill-badge.core-skill {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    animation: pulse-glow 3s infinite ease-in-out;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px 0px var(--accent-color);
+    }
+    50% {
+      box-shadow: 0 0 15px 5px var(--accent-color);
+    }
+  }
+
+  .skill-badge.visible {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  @keyframes rainbow-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .skill-badge.core-skill:hover {
+      animation-play-state: paused;
+  }
+
   /* Auto-scrolling projects section */
   .auto-scroll-container {
     width: 100%;
@@ -200,6 +356,7 @@ title: Welcome
 
   .project-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 8px 16px var(--hover-shadow);
   }
 
   .project-link {
@@ -336,5 +493,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start Animation
     animate();
+
+    // Skills section animation
+    const skillBadges = document.querySelectorAll('.skill-badge');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    });
+
+    skillBadges.forEach((badge, index) => {
+        badge.style.transitionDelay = `${index * 100}ms`;
+        observer.observe(badge);
+    });
 });
 </script> 

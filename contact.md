@@ -3,10 +3,6 @@ layout: default
 title: Contact
 ---
 
-<a href="/" class="back-to-main">
-  <i class="fas fa-arrow-left"></i> Back to Main Page
-</a>
-
 <div class="contact-container">
     <div class="contact-header">
         <h1>Get in Touch</h1>
@@ -226,37 +222,6 @@ title: Contact
 
         .social-links {
             grid-template-columns: 1fr;
-        }
-    }
-
-    .back-to-main {
-        position: fixed;
-        top: 2rem;
-        left: 2rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: var(--card-bg);
-        color: var(--accent-color);
-        border: 1px solid var(--border-color);
-        border-radius: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        text-decoration: none;
-        font-weight: 600;
-        box-shadow: 0 2px 4px var(--shadow-color);
-        transition: transform 0.2s, box-shadow 0.2s;
-        z-index: 100;
-        margin-bottom: 0;
-    }
-    .back-to-main:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 6px var(--hover-shadow);
-        color: var(--accent-hover);
-    }
-    @media (max-width: 768px) {
-        .back-to-main {
-            top: 1rem;
-            left: 1rem;
         }
     }
 </style> 
