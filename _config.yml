@@ -9,6 +9,11 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
 # Exclude from processing
 exclude:
   - Gemfile

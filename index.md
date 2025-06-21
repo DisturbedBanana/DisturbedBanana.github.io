@@ -25,47 +25,14 @@ title: Welcome
   <h2>Featured Projects</h2>
   <div class="auto-scroll-container">
     <div class="auto-scroll">
+      {%- for project in site.projects -%}
       <div class="project-card">
-        <h3>Project One</h3>
-        <p>Description of your first project goes here.</p>
-        <a href="/project-one" class="project-link">Learn More</a>
+        <img src="{{ project.image }}" alt="{{ project.title }}" style="width:100%;border-radius:0.5rem;margin-bottom:1rem;">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-desc">{{ project.excerpt | strip_html | truncate: 120 }}</p>
+        <a href="{{ project.url }}" class="project-link">Learn More</a>
       </div>
-      <div class="project-card">
-        <h3>Project Two</h3>
-        <p>Description of your second project goes here.</p>
-        <a href="/project-two" class="project-link">Learn More</a>
-      </div>
-      <div class="project-card">
-        <h3>Project Three</h3>
-        <p>Description of your third project goes here.</p>
-        <a href="/project-three" class="project-link">Learn More</a>
-      </div>
-      <div class="project-card">
-        <h3>Project Four</h3>
-        <p>Description of your fourth project goes here.</p>
-        <a href="/project-four" class="project-link">Learn More</a>
-      </div>
-      <!-- Duplicate cards for seamless scrolling -->
-      <div class="project-card">
-        <h3>Project One</h3>
-        <p>Description of your first project goes here.</p>
-        <a href="/project-one" class="project-link">Learn More</a>
-      </div>
-      <div class="project-card">
-        <h3>Project Two</h3>
-        <p>Description of your second project goes here.</p>
-        <a href="/project-two" class="project-link">Learn More</a>
-      </div>
-      <div class="project-card">
-        <h3>Project Three</h3>
-        <p>Description of your third project goes here.</p>
-        <a href="/project-three" class="project-link">Learn More</a>
-      </div>
-      <div class="project-card">
-        <h3>Project Four</h3>
-        <p>Description of your fourth project goes here.</p>
-        <a href="/project-four" class="project-link">Learn More</a>
-      </div>
+      {%- endfor -%}
     </div>
   </div>
 </section>
@@ -177,6 +144,12 @@ title: Welcome
     transition: transform 0.2s;
     min-width: 300px;
     max-width: 300px;
+    color: #1f2937;
+  }
+
+  [data-theme="dark"] .project-card {
+    background: #2d2d2d;
+    color: #fff;
   }
 
   .project-card:hover {
@@ -194,6 +167,22 @@ title: Welcome
 
   .project-link:hover {
     color: #4f46e5;
+  }
+
+  .project-title {
+    color: #1f2937;
+  }
+
+  [data-theme="dark"] .project-title {
+    color: #fff;
+  }
+
+  .project-desc {
+    color: #4b5563;
+  }
+
+  [data-theme="dark"] .project-desc {
+    color: #e5e7eb;
   }
 
   @media (max-width: 768px) {
