@@ -154,6 +154,21 @@
     </nav>
 </header> 
     <div class="hero">
+  <!-- Animated background elements -->
+  <div class="hero-bg-patterns">
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+      <div class="shape shape-6"></div>
+    </div>
+    <div class="geometric-grid"></div>
+    <div class="particle-field"></div>
+    <div class="wave-overlay"></div>
+  </div>
+  
   <div class="hero-content">
     <h1>Lucas Guichard</h1>
     <p class="subtitle">Gameplay &amp; Tools Developer, UX enthusiast</p>
@@ -300,28 +315,284 @@
 </section>
 
 <style>
-  /* Hero Section */
+  /* Hero Section - Completely Redesigned */
   .hero {
-    min-height: 60vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6);
-    background-size: 400% 400%;
-    animation: scroll-bg 15s ease infinite;
+    position: relative;
+    overflow: hidden;
     color: white;
     text-align: center;
     padding: 2rem;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(231, 76, 60, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(155, 89, 182, 0.3) 0%, transparent 50%),
+      linear-gradient(135deg, 
+        #e74c3c 0%, 
+        #f39c12 15%, 
+        #f1c40f 30%, 
+        #2ecc71 45%, 
+        #3498db 60%, 
+        #9b59b6 75%, 
+        #e74c3c 100%);
+    background-size: 400% 400%, 300% 300%, 350% 350%, 400% 400%;
+    animation: 
+      scroll-bg 20s ease infinite,
+      pulse-glow 8s ease-in-out infinite;
   }
 
-  .hero-content { max-width: 800px; }
-  .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-  .subtitle { font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.9; }
-  .cta-buttons { display: flex; gap: 1rem; justify-content: center; }
-  .cta-button { padding: 0.8rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: transform 0.2s; }
-  .cta-button:hover { transform: translateY(-2px); }
-  .primary { background: white; color: #6366f1; }
-  .secondary { border: 2px solid white; color: white; }
+  /* Animated Background Patterns */
+  .hero-bg-patterns {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  /* Floating Geometric Shapes */
+  .floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 15s ease-in-out infinite;
+  }
+
+  .shape-1 {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.3));
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .shape-2 {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.2));
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    top: 60%;
+    right: 15%;
+    animation-delay: -3s;
+  }
+
+  .shape-3 {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.15));
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 30%;
+    right: 30%;
+    animation-delay: -6s;
+  }
+
+  .shape-4 {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.25));
+    border-radius: 8px;
+    top: 70%;
+    left: 20%;
+    animation-delay: -9s;
+  }
+
+  .shape-5 {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.2));
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 15%;
+    left: 60%;
+    animation-delay: -12s;
+  }
+
+  .shape-6 {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.3));
+    border-radius: 50%;
+    top: 80%;
+    right: 25%;
+    animation-delay: -15s;
+  }
+
+  /* Geometric Grid Pattern */
+  .geometric-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 30s linear infinite;
+  }
+
+  /* Particle Field */
+  .particle-field {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px;
+    animation: particle-drift 25s ease-in-out infinite;
+  }
+
+  /* Wave Overlay */
+  .wave-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(45deg, 
+      rgba(255,255,255,0.1) 25%, 
+      transparent 25%, 
+      transparent 50%, 
+      rgba(255,255,255,0.1) 50%, 
+      rgba(255,255,255,0.1) 75%, 
+      transparent 75%);
+    background-size: 60px 60px;
+    animation: wave-flow 12s linear infinite;
+  }
+
+  /* Hero Content */
+  .hero-content { 
+    max-width: 800px; 
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 
+      0 20px 40px rgba(0,0,0,0.3),
+      inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .hero h1 { 
+    font-size: 4rem; 
+    margin-bottom: 1rem; 
+    background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: text-shimmer 3s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(255,255,255,0.5);
+  }
+
+  .subtitle { 
+    font-size: 1.8rem; 
+    margin-bottom: 2rem; 
+    opacity: 0.95;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    font-weight: 300;
+  }
+
+  .cta-buttons { 
+    display: flex; 
+    gap: 1.5rem; 
+    justify-content: center; 
+  }
+
+  .cta-button { 
+    padding: 1rem 2.5rem; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .cta-button:hover::before {
+    left: 100%;
+  }
+
+  .cta-button:hover { 
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .primary { 
+    background: rgba(255,255,255,0.9); 
+    color: #6366f1; 
+  }
+
+  .secondary { 
+    background: rgba(255,255,255,0.1); 
+    color: white; 
+  }
+
+  /* Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(90deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+    75% { transform: translateY(-30px) rotate(270deg); }
+  }
+
+  @keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+  }
+
+  @keyframes particle-drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, -20px); }
+  }
+
+  @keyframes wave-flow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(60px); }
+  }
+
+  @keyframes text-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes scroll-bg { 
+    0% { background-position: 0% 50%, 0% 0%, 0% 0%, 0% 50%; } 
+    50% { background-position: 100% 50%, 100% 100%, 100% 100%, 100% 50%; } 
+    100% { background-position: 0% 50%, 0% 0%, 0% 0%, 0% 50%; } 
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 50px rgba(231, 76, 60, 0.3); }
+    25% { box-shadow: 0 0 50px rgba(52, 152, 219, 0.3); }
+    50% { box-shadow: 0 0 50px rgba(155, 89, 182, 0.3); }
+    75% { box-shadow: 0 0 50px rgba(46, 204, 113, 0.3); }
+  }
 
   /* General Section Styling */
   section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
@@ -375,9 +646,6 @@
   .skill-badge.visible { opacity: 1; transform: translateY(0); }
   @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 5px 0px var(--accent-color); } 50% { box-shadow: 0 0 15px 5px var(--accent-color); } }
 
-  /* Global Animations */
-  @keyframes scroll-bg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
   /* Projects Section */
   .projects-section { text-align: center; }
   .projects-carousel { position: relative; max-width: 960px; margin: 0 auto; }
@@ -417,7 +685,10 @@
   /* Media Queries for Responsiveness */
   @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
+    .subtitle { font-size: 1.3rem; }
     .cta-buttons { flex-direction: column; }
+    .hero-content { padding: 2rem; }
+    .shape { display: none; }
   }
 </style>
 
