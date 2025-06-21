@@ -44,14 +44,29 @@ title: Contact
                 </a>
             </div>
 
-            <div class="email-section">
-                <h2>Email</h2>
-                <a href="mailto:lucasguichard78@gmail.com" class="email-link">
-                    <div class="email-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+            <div class="personal-info">
+                <a href="mailto:lucasguichard78@gmail.com" class="info-link">
+                    <i class="fas fa-envelope"></i>
                     <span>lucasguichard78@gmail.com</span>
                 </a>
+                <div class="info-link">
+                    <i class="fas fa-phone"></i>
+                    <span>06 95 04 14 90</span>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>CV</h2>
+                <div class="cv-buttons">
+                    <a href="/assets/cv.pdf" class="cv-button" target="_blank">
+                        <i class="fas fa-eye"></i>
+                        <span>View CV</span>
+                    </a>
+                    <a href="/assets/cv.pdf" class="cv-button" download>
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -223,69 +238,56 @@ title: Contact
 
     /* Contact Info */
     .contact-info {
+        flex: 1;
+        max-width: 400px;
+        margin-right: 4rem;
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 2rem;
     }
 
     /* Social Links */
     .social-links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
         gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .social-link {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        border-radius: 15px;
+        gap: 0.75rem;
         text-decoration: none;
-        color: var(--text-color);
-        font-weight: 600;
+        color: var(--text-secondary);
+        padding: 1.5rem;
+        border-radius: 15px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 12px var(--shadow-color);
         transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .social-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.6s;
-    }
-
-    .social-link:hover::before {
-        left: 100%;
+        flex: 1;
+        min-width: 100px;
     }
 
     .social-link:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 
-            0 15px 40px rgba(0, 0, 0, 0.2),
-            0 0 20px rgba(99, 102, 241, 0.3);
-        border-color: rgba(99, 102, 241, 0.3);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px var(--hover-shadow);
+        color: var(--accent-color);
+        border-color: var(--accent-color);
     }
 
     .social-icon {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
-        border-radius: 12px;
+        font-size: 2rem;
+        width: 4rem;
+        height: 4rem;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(145deg, var(--bg-color), var(--card-bg));
+        box-shadow: inset 0 2px 4px var(--shadow-color);
         transition: all 0.3s ease;
     }
 
@@ -299,74 +301,109 @@ title: Contact
         color: white;
     }
 
-    /* Email Section */
-    .email-section h2 {
-        margin-bottom: 1.5rem;
-        color: var(--text-color);
-        font-size: 1.8rem;
+    .social-link span {
+        font-weight: 600;
     }
 
-    .email-link {
+    /* Personal Info Section */
+    .personal-info {
         display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1.5rem;
+        flex-direction: column;
+        gap: 1.5rem;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(15px);
         border-radius: 15px;
-        color: var(--text-color);
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
+        padding: 1.5rem;
         border: 1px solid rgba(255, 255, 255, 0.2);
         box-shadow: 
             0 8px 32px rgba(0, 0, 0, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        position: relative;
-        overflow: hidden;
     }
 
-    .email-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.6s;
-    }
-
-    .email-link:hover::before {
-        left: 100%;
-    }
-
-    .email-link:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 
-            0 15px 40px rgba(0, 0, 0, 0.2),
-            0 0 20px rgba(99, 102, 241, 0.3);
-        border-color: rgba(99, 102, 241, 0.3);
-    }
-
-    .email-icon {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, #e74c3c, #c0392b);
-        border-radius: 12px;
+    .info-link {
         display: flex;
         align-items: center;
+        gap: 1rem;
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    a.info-link {
+        background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow-flow 3s linear infinite;
+        font-weight: 600;
+    }
+
+    a.info-link:hover {
+        text-decoration: underline;
+    }
+
+    .info-link i {
+        font-size: 1.2rem;
+        color: var(--accent-color);
+        width: 20px;
+        text-align: center;
+    }
+
+    /* CV Section */
+    .cv-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        padding: 1.5rem;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .cv-section h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        color: var(--text-color);
+    }
+
+    .cv-buttons {
+        display: flex;
+        gap: 1.5rem;
         justify-content: center;
+    }
+
+    .cv-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
         transition: all 0.3s ease;
+        border: 2px solid transparent;
+        background: var(--accent-color);
     }
 
-    .email-link:hover .email-icon {
-        transform: rotate(360deg) scale(1.1);
-        box-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+    .cv-button:hover {
+        background: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px var(--hover-shadow);
     }
 
-    .email-icon i {
-        font-size: 1.5rem;
+    .cv-button:last-child {
+        background: transparent;
+        border: 2px solid var(--accent-color);
+        color: var(--accent-color);
+    }
+
+    .cv-button:last-child:hover {
+        background: var(--accent-color);
         color: white;
     }
 
