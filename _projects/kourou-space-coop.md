@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Kourou Space Coop
-image: /assets/images/kourou-space-coop.png
+image: /assets/images/kourou-space-coop/kourou-space-coop.png
 itchio_link: https://atsue.itch.io/kourou-space-coop
 excerpt: "A cooperative VR game inspired by Ariane 5 rocket launches. Play Kourou Space Coop on itch.io !"
 ---

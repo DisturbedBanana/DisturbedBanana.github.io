@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Sweet Melody
-image: /assets/images/sweet-melody.png
+image: /assets/images/sweet-melody/sweet-melody.png
 itchio_link: https://anatole13.itch.io/sweet-melody
 excerpt: "Survive your first night in a haunted orphanage. Play Sweet Melody on itch.io !"
 ---

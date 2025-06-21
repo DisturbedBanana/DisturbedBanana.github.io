@@ -1,9 +1,9 @@
 ---
 layout: project
 title: Iridescence
-image: /assets/images/iridescence.png
+image: /assets/images/iridescence/iridescence.png
 itchio_link: https://zukkinioni.itch.io/iridescence
-excerpt: "A puzzle game about light and color. Play Iridescence on itch.io !"
+excerpt: "A mesmerizing puzzle game where players manipulate light and color to solve increasingly complex challenges. Play Iridescence on itch.io !"
 ---
 
 <div class="project-container">
