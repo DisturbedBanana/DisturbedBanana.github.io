@@ -47,6 +47,20 @@
             padding-top: 60px; /* Space for the sticky header */
         }
 
+        .page-wrapper {
+            display: grid;
+            grid-template-columns: 1fr min(1200px, calc(100% - 4rem)) 1fr;
+        }
+
+        .page-wrapper > * {
+            grid-column: 2;
+        }
+
+        .full-bleed {
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             margin-bottom: 1rem;
             color: var(--text-color);
@@ -153,7 +167,8 @@
         <a href="/contact" class="nav-link">Contact</a>
     </nav>
 </header> 
-    <div class="hero">
+    <div class="page-wrapper">
+        <div class="hero full-bleed">
   <!-- Animated background elements -->
   <div class="hero-bg-patterns">
     <div class="floating-shapes">
@@ -227,94 +242,62 @@
   </div>
 </section>
 
-<section id="projects" class="projects-section">
-  <h2 class="section-title">Projects</h2>
-  <div class="projects-carousel">
-    <button class="carousel-button prev" aria-label="Previous project">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M15 18l-6-6 6-6" />
-      </svg>
-    </button>
-    
-    <div class="carousel-container">
-      <div class="carousel-track">
-        
-          <div class="project-slide" data-index="0">
-            <div class="project-card">
-              <div class="project-image-container">
-                <img src="/assets/images/iridescence.png" alt="Iridescence" class="project-image" />
-              </div>
-              <div class="card-content">
-                <h3>Iridescence</h3>
-                <p>A puzzle game about light and color. Play Iridescence on itch.io !</p>
-                <a href="/projects/iridescence/" class="project-link">View Details</a>
-              </div>
+<section id="projects" class="projects-section full-bleed">
+  <div class="project-grid-container">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      
+        <a href="/projects/iridescence/" class="project-card-link">
+          <div class="project-card">
+            <img src="/assets/images/iridescence.png" alt="Iridescence" class="project-card-bg" />
+            <div class="project-card-content">
+              <h3 class="project-card-title">Iridescence</h3>
+              <p class="project-card-excerpt">A puzzle game about light and color. Play Iridescence on itch.io !</p>
             </div>
           </div>
-        
-          <div class="project-slide" data-index="1">
-            <div class="project-card">
-              <div class="project-image-container">
-                <img src="/assets/images/kourou-space-coop.png" alt="Kourou Space Coop" class="project-image" />
-              </div>
-              <div class="card-content">
-                <h3>Kourou Space Coop</h3>
-                <p>A cooperative VR game inspired by Ariane 5 rocket launches. Play Kourou Space Coop on itch.io !</p>
-                <a href="/projects/kourou-space-coop/" class="project-link">View Details</a>
-              </div>
+        </a>
+      
+        <a href="/projects/kourou-space-coop/" class="project-card-link">
+          <div class="project-card">
+            <img src="/assets/images/kourou-space-coop.png" alt="Kourou Space Coop" class="project-card-bg" />
+            <div class="project-card-content">
+              <h3 class="project-card-title">Kourou Space Coop</h3>
+              <p class="project-card-excerpt">A cooperative VR game inspired by Ariane 5 rocket launches. Play Kourou Space Coop on itch.io !</p>
             </div>
           </div>
-        
-          <div class="project-slide" data-index="2">
-            <div class="project-card">
-              <div class="project-image-container">
-                <img src="/assets/images/selvage.png" alt="Selvage" class="project-image" />
-              </div>
-              <div class="card-content">
-                <h3>Selvage</h3>
-                <p>A psychological horror FPS with a berserk mechanic. Play Selvage on itch.io !</p>
-                <a href="/projects/selvage/" class="project-link">View Details</a>
-              </div>
+        </a>
+      
+        <a href="/projects/selvage/" class="project-card-link">
+          <div class="project-card">
+            <img src="/assets/images/selvage.png" alt="Selvage" class="project-card-bg" />
+            <div class="project-card-content">
+              <h3 class="project-card-title">Selvage</h3>
+              <p class="project-card-excerpt">A psychological horror FPS with a berserk mechanic. Play Selvage on itch.io !</p>
             </div>
           </div>
-        
-          <div class="project-slide" data-index="3">
-            <div class="project-card">
-              <div class="project-image-container">
-                <img src="/assets/images/sweet-melody.png" alt="Sweet Melody" class="project-image" />
-              </div>
-              <div class="card-content">
-                <h3>Sweet Melody</h3>
-                <p>Survive your first night in a haunted orphanage. Play Sweet Melody on itch.io !</p>
-                <a href="/projects/sweet-melody/" class="project-link">View Details</a>
-              </div>
+        </a>
+      
+        <a href="/projects/sweet-melody/" class="project-card-link">
+          <div class="project-card">
+            <img src="/assets/images/sweet-melody.png" alt="Sweet Melody" class="project-card-bg" />
+            <div class="project-card-content">
+              <h3 class="project-card-title">Sweet Melody</h3>
+              <p class="project-card-excerpt">Survive your first night in a haunted orphanage. Play Sweet Melody on itch.io !</p>
             </div>
           </div>
-        
-      </div>
+        </a>
+      
     </div>
-    
-    <button class="carousel-button next" aria-label="Next project">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M9 18l6-6-6-6" />
-      </svg>
-    </button>
-  </div>
-  
-  <div class="carousel-indicators">
-    
-      <button class="indicator" data-index="0" aria-label="Go to project 1"></button>
-    
-      <button class="indicator" data-index="1" aria-label="Go to project 2"></button>
-    
-      <button class="indicator" data-index="2" aria-label="Go to project 3"></button>
-    
-      <button class="indicator" data-index="3" aria-label="Go to project 4"></button>
-    
   </div>
 </section>
 
 <style>
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
   /* Hero Section - Completely Redesigned */
   .hero {
     min-height: 80vh;
@@ -588,23 +571,61 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 50px rgba(231, 76, 60, 0.3); }
-    25% { box-shadow: 0 0 50px rgba(52, 152, 219, 0.3); }
-    50% { box-shadow: 0 0 50px rgba(155, 89, 182, 0.3); }
-    75% { box-shadow: 0 0 50px rgba(46, 204, 113, 0.3); }
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes background-shift {
+    0% {
+      background-position: 0% 50%, 100% 50%, 50% 100%;
+    }
+    25% {
+      background-position: 25% 75%, 75% 25%, 75% 75%;
+    }
+    50% {
+      background-position: 50% 0%, 0% 100%, 100% 0%;
+    }
+    75% {
+      background-position: 75% 25%, 25% 75%, 25% 25%;
+    }
+    100% {
+      background-position: 0% 50%, 100% 50%, 50% 100%;
+    }
+  }
+
+  @keyframes subtle-dark-shift {
+    0%   { background-color: #0c0a18; }
+    25%  { background-color: #201a3a; }
+    50%  { background-color: #2c2a48; }
+    75%  { background-color: #201a3a; }
+    100% { background-color: #0c0a18; }
   }
 
   /* General Section Styling */
-  section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+  section:not(.full-bleed) { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
   .section-title { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
 
   /* About Me Section */
-  .about-section { background: var(--card-bg); width: 100vw; max-width: none; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding: 4rem 2rem; }
+  .about-section {
+    padding: 4rem 0;
+    text-align: center;
+  }
+
   .about-section h2 { text-align: center; }
   .about-content { max-width: 800px; margin: 0 auto; line-height: 1.6; text-align: center; }
+  .about-content p { color: var(--text-secondary); }
 
   /* Skills Section */
-  .skills-section { text-align: center; }
+  .skills-section {
+    padding: 4rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .skills-section .section-title {
+    margin-bottom: 2rem;
+  }
+
   .skills-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-top: 2rem; text-align: left; }
   @media (min-width: 768px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
   .skill-category h3 { margin-bottom: 1.5rem; color: var(--accent-color); }
@@ -647,40 +668,129 @@
   @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 5px 0px var(--accent-color); } 50% { box-shadow: 0 0 15px 5px var(--accent-color); } }
 
   /* Projects Section */
-  .projects-section { text-align: center; }
-  .projects-carousel { position: relative; max-width: 960px; margin: 0 auto; }
-  .carousel-container { overflow: hidden; border-radius: 15px; position: relative; z-index: 1; }
-  .carousel-track { display: flex; }
-  .project-slide { min-width: 100%; flex-shrink: 0; padding: 0 5px; }
-  .project-card { background-color: transparent; border-radius: 15px; position: relative; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); z-index: 1; height: 100%; }
-  .project-card::before, .project-card::after { content: ''; position: absolute; border-radius: inherit; }
-  .project-card::after { top: 0; left: 0; right: 0; bottom: 0; background: var(--card-bg); z-index: -1; }
-  .project-card::before {
-    top: -2px; left: -2px; right: -2px; bottom: -2px;
-    background: linear-gradient(var(--bg-angle), #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c);
-    background-size: 200% 200%;
-    z-index: -2;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-    animation: rainbow-bg 3s linear infinite;
+  .projects-section {
+    padding: 4rem 0;
+    background-color: #0c0a18;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    animation: subtle-dark-shift 8s ease-in-out infinite;
   }
-  .project-card:hover::before { opacity: 1; }
-  .project-image-container { width: 100%; height: 300px; background-color: #000; display: flex; align-items: center; justify-content: center; border-top-left-radius: 15px; border-top-right-radius: 15px; overflow: hidden; }
-  .project-card .project-image { width: 100%; height: 100%; object-fit: contain; display: block; }
-  .project-card .card-content { padding: 2rem; text-align: left; }
-  .project-card .card-content h3 { margin-top: 0; margin-bottom: 1rem; color: var(--text-color); font-size: 1.5rem; }
-  .project-card .card-content p { color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; min-height: auto; }
-  .project-link { display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent-color); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background-color 0.3s ease; }
-  .project-link:hover { background: var(--accent-hover); }
-  .carousel-button { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; }
-  .carousel-button.prev { left: 1rem; }
-  .carousel-button.next { right: 1rem; }
-  .carousel-button:hover { background: var(--accent-color); transform: translateY(-50%) scale(1.1); }
-  .carousel-button:disabled { opacity: 0.5; cursor: not-allowed; transform: translateY(-50%); }
-  .carousel-indicators { display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; }
-  .indicator { width: 12px; height: 12px; border-radius: 50%; border: none; background: var(--border-color); cursor: pointer; transition: all 0.3s ease; }
-  .indicator.active { background: var(--accent-color); transform: scale(1.2); }
-  .indicator:hover { background: var(--accent-color); }
+
+  .project-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .projects-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(155, 89, 182, 0.2), transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(52, 152, 219, 0.15), transparent 40%),
+      radial-gradient(circle at 50% 80%, rgba(231, 76, 60, 0.1), transparent 40%);
+    animation: pulse-glow 10s ease-in-out infinite, background-shift 15s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  .projects-section .section-title {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+  }
+
+  .project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card-link:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(155, 89, 182, 0.6);
+  }
+
+  .project-card {
+    aspect-ratio: 4 / 3;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(22, 18, 40, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .project-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(0.7);
+  }
+
+  .project-card-link:hover .project-card-bg {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+  }
+
+  .project-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem;
+    color: #fff;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+    transform: translateY(calc(100% - 4.5rem)); /* Adjust this value to control how much is visible */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .project-card-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card-excerpt {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-card-link:hover .project-card-content {
+    transform: translateY(0);
+  }
+
+  .project-card-link:hover .project-card-excerpt {
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
 
   /* Media Queries for Responsiveness */
   @media (max-width: 768px) {
@@ -780,6 +890,7 @@
 </script>
 
 
+    </div>
     
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>

@@ -47,6 +47,20 @@
             padding-top: 60px; /* Space for the sticky header */
         }
 
+        .page-wrapper {
+            display: grid;
+            grid-template-columns: 1fr min(1200px, calc(100% - 4rem)) 1fr;
+        }
+
+        .page-wrapper > * {
+            grid-column: 2;
+        }
+
+        .full-bleed {
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             margin-bottom: 1rem;
             color: var(--text-color);
@@ -153,7 +167,8 @@
         <a href="/contact" class="nav-link">Contact</a>
     </nav>
 </header> 
-    <div class="project-container">
+    <div class="page-wrapper">
+        <div class="project-container">
     <!-- Animated background elements -->
     <div class="project-bg-patterns">
         <div class="floating-elements">
@@ -587,6 +602,7 @@
 </style>
 
  
+    </div>
     
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
