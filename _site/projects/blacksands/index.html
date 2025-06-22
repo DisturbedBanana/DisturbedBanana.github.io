@@ -183,18 +183,28 @@
 
     <div class="project-header">
         <h1>Blacksands</h1>
-        <a href="https://fantin-dahmani.itch.io/blacksands" class="itchio-button" target="_blank">
-            <div class="itchio-icon">
-                <img src="https://static.itch.io/images/badge-color.svg" alt="itch.io" />
-            </div>
-            <span>Play Blacksands on itch.io !</span>
-        </a>
     </div>
     
     <div class="project-content">
         <div class="project-image-container">
             <div class="project-image">
                 <img src="/assets/images/blacksands/blacksands.png" alt="Blacksands" />
+            </div>
+            <a href="https://fantin-dahmani.itch.io/blacksands" class="itchio-button" target="_blank">
+                <div class="itchio-icon">
+                    <i class="fab fa-itch-io"></i>
+                </div>
+                <span>Play Blacksands on itch.io !</span>
+            </a>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-text">My Contributions</div>
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
             </div>
         </div>
         
@@ -339,6 +349,23 @@
     </div>
 </div>
 
+<script>
+    // Smooth scroll to My Contribution section when clicking the scroll indicator
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        const contributionSection = document.querySelector('.my-contribution-section');
+        
+        if (scrollIndicator && contributionSection) {
+            scrollIndicator.addEventListener('click', function() {
+                contributionSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        }
+    });
+</script>
+
 <style>
     /* Project Page - Completely Redesigned */
     .project-container {
@@ -442,11 +469,12 @@
     /* Project Header */
     .project-header {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         margin-bottom: 3rem;
         position: relative;
         z-index: 2;
+        text-align: center;
     }
 
     .project-header h1 {
@@ -460,7 +488,6 @@
         text-shadow: 0 0 30px rgba(44, 62, 80, 0.3);
     }
 
-    /* Itch.io Button */
     .itchio-button {
         display: flex;
         align-items: center;
@@ -479,6 +506,7 @@
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
         position: relative;
         overflow: hidden;
+        margin-top: 2.5rem;
     }
 
     .itchio-button::before {
@@ -515,9 +543,8 @@
         transform: rotate(360deg) scale(1.1);
     }
 
-    .itchio-icon img {
-        height: 24px;
-        width: auto;
+    .itchio-icon i {
+        font-size: 24px;
     }
 
     /* Project Content */
@@ -529,9 +556,58 @@
         z-index: 2;
     }
 
+    /* Scroll Indicator */
+    .scroll-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 2.5rem;
+    }
+
+    .scroll-indicator:hover {
+        transform: translateY(5px);
+    }
+
+    .scroll-text {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        background: linear-gradient(45deg, var(--text-secondary), #2c3e50, var(--text-secondary));
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: text-shimmer-project 3s ease-in-out infinite;
+    }
+
+    .scroll-arrow {
+        color: var(--text-secondary);
+        animation: bounce-arrow 2s ease-in-out infinite;
+        transition: color 0.3s ease;
+    }
+
+    .scroll-indicator:hover .scroll-arrow {
+        color: #2c3e50;
+    }
+
+    .scroll-arrow svg {
+        width: 24px;
+        height: 24px;
+    }
+
     /* Project Image */
     .project-image-container {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .project-image {
@@ -909,6 +985,11 @@
         50% { opacity: 1; }
     }
 
+    @keyframes bounce-arrow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
         .project-content {
@@ -1011,6 +1092,10 @@
         margin-bottom: 2rem;
         line-height: 1.7;
         font-size: 1.1rem;
+    }
+
+    .contribution-feature + .contribution-feature {
+        margin-top: 3rem;
     }
 
     /* Responsive Design for My Contribution Section */

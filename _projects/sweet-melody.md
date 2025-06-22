@@ -21,12 +21,6 @@ excerpt: "Survive your first night in a haunted orphanage. Play Sweet Melody on 
 
     <div class="project-header">
         <h1>{{ page.title }}</h1>
-        <a href="{{ page.itchio_link }}" class="itchio-button" target="_blank">
-            <div class="itchio-icon">
-                <img src="https://static.itch.io/images/badge-color.svg" alt="itch.io">
-            </div>
-            <span>Play {{ page.title }} on itch.io !</span>
-        </a>
     </div>
     
     <div class="project-content">
@@ -34,6 +28,12 @@ excerpt: "Survive your first night in a haunted orphanage. Play Sweet Melody on 
             <div class="project-image">
                 <img src="{{ page.image }}" alt="{{ page.title }}">
             </div>
+            <a href="{{ page.itchio_link }}" class="itchio-button" target="_blank">
+                <div class="itchio-icon">
+                    <i class="fab fa-itch-io"></i>
+                </div>
+                <span>Play {{ page.title }} on itch.io !</span>
+            </a>
         </div>
         
         <div class="project-description">
@@ -157,11 +157,12 @@ excerpt: "Survive your first night in a haunted orphanage. Play Sweet Melody on 
     /* Project Header */
     .project-header {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         margin-bottom: 3rem;
         position: relative;
         z-index: 2;
+        text-align: center;
     }
 
     .project-header h1 {
@@ -194,6 +195,7 @@ excerpt: "Survive your first night in a haunted orphanage. Play Sweet Melody on 
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
         position: relative;
         overflow: hidden;
+        margin-top: 2.5rem;
     }
 
     .itchio-button::before {
@@ -230,9 +232,8 @@ excerpt: "Survive your first night in a haunted orphanage. Play Sweet Melody on 
         transform: rotate(360deg) scale(1.1);
     }
 
-    .itchio-icon img {
-        height: 24px;
-        width: auto;
+    .itchio-icon i {
+        font-size: 24px;
     }
 
     /* Project Content */
@@ -247,6 +248,9 @@ excerpt: "Survive your first night in a haunted orphanage. Play Sweet Melody on 
     /* Project Image */
     .project-image-container {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .project-image {
