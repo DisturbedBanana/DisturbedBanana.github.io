@@ -356,6 +356,22 @@ excerpt: "Survive your first night in a haunted orphanage. Play Sweet Melody on 
         text-shadow: 0 0 10px rgba(155, 89, 182, 0.3);
     }
 
+    /* Rainbow itch.io text styling */
+    .download-link {
+        background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow-flow-project 3s linear infinite;
+        font-weight: 600;
+    }
+
+    .download-link:hover {
+        text-decoration: underline;
+        text-shadow: none;
+    }
+
     .project-description ul {
         margin: 1.5rem 0;
         padding-left: 1.5rem;

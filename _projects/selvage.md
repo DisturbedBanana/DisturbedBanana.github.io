@@ -328,7 +328,7 @@ excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on it
     }
 
     .download-link {
-        color: #2c3e50;
+        color: #2ecc71;
         text-decoration: none;
         font-weight: 600;
         transition: all 0.3s ease;
@@ -342,7 +342,7 @@ excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on it
         left: 0;
         width: 0;
         height: 2px;
-        background: linear-gradient(90deg, #2c3e50, #e74c3c);
+        background: linear-gradient(90deg, #2ecc71, #27ae60);
         transition: width 0.3s ease;
     }
 
@@ -351,8 +351,24 @@ excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on it
     }
 
     .download-link:hover {
-        color: #e74c3c;
-        text-shadow: 0 0 10px rgba(44, 62, 80, 0.3);
+        color: #27ae60;
+        text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+    }
+
+    /* Rainbow itch.io text styling */
+    .download-link {
+        background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6, #e74c3c);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow-flow-project 3s linear infinite;
+        font-weight: 600;
+    }
+
+    .download-link:hover {
+        text-decoration: underline;
+        text-shadow: none;
     }
 
     .project-description ul {
