@@ -9,32 +9,6 @@ excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on it
 <div class="project-container">
     <!-- Animated background elements -->
     <div class="project-bg-patterns">
-        <div class="floating-elements">
-            <div class="float-element float-1"></div>
-            <div class="float-element float-2"></div>
-            <div class="float-element float-3"></div>
-            <div class="float-element float-4"></div>
-            <div class="float-element float-5"></div>
-            <div class="float-element float-6"></div>
-            <div class="float-element float-7"></div>
-            <div class="float-element float-8"></div>
-            <div class="float-element float-9"></div>
-            <div class="float-element float-10"></div>
-            <div class="float-element float-11"></div>
-            <div class="float-element float-12"></div>
-            <div class="float-element float-13"></div>
-            <div class="float-element float-14"></div>
-            <div class="float-element float-15"></div>
-            <div class="float-element float-16"></div>
-            <div class="float-element float-17"></div>
-            <div class="float-element float-18"></div>
-            <div class="float-element float-19"></div>
-            <div class="float-element float-20"></div>
-            <div class="float-element float-21"></div>
-            <div class="float-element float-22"></div>
-            <div class="float-element float-23"></div>
-            <div class="float-element float-24"></div>
-        </div>
         <div class="geometric-pattern"></div>
         <div class="particle-field"></div>
     </div>
@@ -54,6 +28,15 @@ excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on it
                 </div>
                 <span>Play {{ page.title }} on itch.io !</span>
             </a>
+            <!-- Note: No "My Contribution" section on this page, so this button won't scroll. -->
+            <div class="scroll-indicator">
+                <div class="scroll-text">My Contributions</div>
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16L6 10L7.41 8.59L12 13.17L16.59 8.59L18 10L12 16Z" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
         </div>
         
         <div class="project-description">
@@ -92,261 +75,7 @@ excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on it
         right: 0;
         bottom: 0;
         z-index: 1;
-        pointer-events: none;
-    }
-
-    /* Floating Elements */
-    .floating-elements {
-        position: absolute;
-        width: 100%;
-        height: 100%;
         overflow: hidden;
-    }
-
-    .float-element {
-        position: absolute;
-        opacity: 0.08;
-        animation: float-project 25s ease-in-out infinite;
-    }
-
-    .float-1 {
-        width: 70px;
-        height: 70px;
-        background: linear-gradient(45deg, #2c3e50, rgba(44, 62, 80, 0.3));
-        border-radius: 50%;
-        top: 20%;
-        left: 8%;
-        animation-delay: 0s;
-    }
-
-    .float-2 {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(45deg, #e74c3c, rgba(231, 76, 60, 0.3));
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        top: 75%;
-        right: 12%;
-        animation-delay: -6s;
-    }
-
-    .float-3 {
-        width: 90px;
-        height: 90px;
-        background: linear-gradient(45deg, #34495e, rgba(52, 73, 94, 0.3));
-        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        top: 30%;
-        right: 20%;
-        animation-delay: -12s;
-    }
-
-    .float-4 {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(45deg, #c0392b, rgba(192, 57, 43, 0.3));
-        border-radius: 10px;
-        top: 85%;
-        left: 15%;
-        animation-delay: -18s;
-    }
-
-    .float-5 {
-        width: 55px;
-        height: 55px;
-        background: linear-gradient(45deg, #9b59b6, rgba(155, 89, 182, 0.3));
-        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-        top: 10%;
-        right: 18%;
-        animation-delay: -24s;
-    }
-
-    .float-6 {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(45deg, #16a085, rgba(22, 160, 133, 0.3));
-        border-radius: 50%;
-        top: 60%;
-        left: 60%;
-        animation-delay: -30s;
-    }
-
-    .float-7 {
-        width: 45px;
-        height: 45px;
-        background: linear-gradient(45deg, #8e44ad, rgba(142, 68, 173, 0.3));
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        top: 35%;
-        right: 35%;
-        animation-delay: -36s;
-    }
-
-    .float-8 {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(45deg, #27ae60, rgba(39, 174, 96, 0.3));
-        border-radius: 50%;
-        top: 5%;
-        left: 75%;
-        animation-delay: -42s;
-    }
-
-    .float-9 {
-        width: 30px;
-        height: 30px;
-        background: linear-gradient(45deg, #d35400, rgba(211, 84, 0, 0.3));
-        border-radius: 8px;
-        top: 45%;
-        left: 25%;
-        animation-delay: -48s;
-    }
-
-    .float-10 {
-        width: 65px;
-        height: 65px;
-        background: linear-gradient(45deg, #2980b9, rgba(41, 128, 185, 0.3));
-        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        top: 75%;
-        right: 25%;
-        animation-delay: -54s;
-    }
-
-    .float-11 {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(45deg, #c0392b, rgba(192, 57, 43, 0.3));
-        border-radius: 50%;
-        top: 25%;
-        right: 65%;
-        animation-delay: -60s;
-    }
-
-    .float-12 {
-        width: 70px;
-        height: 70px;
-        background: linear-gradient(45deg, #f39c12, rgba(243, 156, 18, 0.3));
-        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-        top: 55%;
-        left: 45%;
-        animation-delay: -66s;
-    }
-
-    .float-13 {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(45deg, #8e44ad, rgba(142, 68, 173, 0.3));
-        border-radius: 8px;
-        top: 15%;
-        right: 55%;
-        animation-delay: -72s;
-    }
-
-    .float-14 {
-        width: 85px;
-        height: 85px;
-        background: linear-gradient(45deg, #16a085, rgba(22, 160, 133, 0.3));
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        top: 65%;
-        right: 45%;
-        animation-delay: -78s;
-    }
-
-    .float-15 {
-        width: 35px;
-        height: 35px;
-        background: linear-gradient(45deg, #e67e22, rgba(230, 126, 34, 0.3));
-        border-radius: 50%;
-        top: 85%;
-        left: 35%;
-        animation-delay: -84s;
-    }
-
-    .float-16 {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(45deg, #3498db, rgba(52, 152, 219, 0.3));
-        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        top: 95%;
-        right: 35%;
-        animation-delay: -90s;
-    }
-
-    .float-17 {
-        width: 55px;
-        height: 55px;
-        background: linear-gradient(45deg, #e74c3c, rgba(231, 76, 60, 0.3));
-        border-radius: 50%;
-        top: 5%;
-        left: 55%;
-        animation-delay: -96s;
-    }
-
-    .float-18 {
-        width: 75px;
-        height: 75px;
-        background: linear-gradient(45deg, #2ecc71, rgba(46, 204, 113, 0.3));
-        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-        top: 35%;
-        left: 15%;
-        animation-delay: -102s;
-    }
-
-    .float-19 {
-        width: 45px;
-        height: 45px;
-        background: linear-gradient(45deg, #9b59b6, rgba(155, 89, 182, 0.3));
-        border-radius: 8px;
-        top: 75%;
-        left: 65%;
-        animation-delay: -108s;
-    }
-
-    .float-20 {
-        width: 65px;
-        height: 65px;
-        background: linear-gradient(45deg, #1abc9c, rgba(26, 188, 156, 0.3));
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        top: 45%;
-        right: 15%;
-        animation-delay: -114s;
-    }
-
-    .float-21 {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(45deg, #f39c12, rgba(243, 156, 18, 0.3));
-        border-radius: 50%;
-        top: 25%;
-        left: 85%;
-        animation-delay: -120s;
-    }
-
-    .float-22 {
-        width: 70px;
-        height: 70px;
-        background: linear-gradient(45deg, #34495e, rgba(52, 73, 94, 0.3));
-        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        top: 55%;
-        right: 55%;
-        animation-delay: -126s;
-    }
-
-    .float-23 {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(45deg, #e67e22, rgba(230, 126, 34, 0.3));
-        border-radius: 8px;
-        top: 15%;
-        left: 35%;
-        animation-delay: -132s;
-    }
-
-    .float-24 {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(45deg, #27ae60, rgba(39, 174, 96, 0.3));
-        border-radius: 50%;
-        top: 65%;
-        left: 25%;
-        animation-delay: -138s;
     }
 
     /* Geometric Pattern */
@@ -620,13 +349,6 @@ excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on it
     }
 
     /* Animations */
-    @keyframes float-project {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        25% { transform: translateY(-20px) rotate(90deg); }
-        50% { transform: translateY(-10px) rotate(180deg); }
-        75% { transform: translateY(-30px) rotate(270deg); }
-    }
-
     @keyframes pattern-move-project {
         0% { transform: translate(0, 0); }
         100% { transform: translate(45px, 45px); }
@@ -652,6 +374,42 @@ excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on it
         50% { opacity: 1; }
     }
 
+    /* Scroll Indicator */
+    .scroll-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .scroll-indicator:hover {
+        transform: translateY(5px);
+    }
+
+    .scroll-text {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+    }
+
+    .scroll-arrow {
+        color: var(--text-secondary);
+        animation: bounce-arrow 2s ease-in-out infinite;
+    }
+
+    .scroll-indicator:hover .scroll-arrow {
+        color: #c0392b;
+    }
+
+    @keyframes bounce-arrow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
         .project-content {
@@ -669,12 +427,24 @@ excerpt: "A psychological horror FPS with a berserk mechanic. Play Selvage on it
             font-size: 2.5rem;
         }
 
-        .float-element {
-            display: none;
-        }
-
         .project-description {
             padding: 2rem;
         }
     }
-</style> 
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        const contributionSection = document.querySelector('.my-contribution-section');
+        
+        if (scrollIndicator && contributionSection) {
+            scrollIndicator.addEventListener('click', function() {
+                contributionSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        }
+    });
+</script> 
