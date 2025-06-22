@@ -13,6 +13,28 @@ title: Welcome
       <div class="shape shape-4"></div>
       <div class="shape shape-5"></div>
       <div class="shape shape-6"></div>
+      <div class="shape shape-7"></div>
+      <div class="shape shape-8"></div>
+      <div class="shape shape-9"></div>
+      <div class="shape shape-10"></div>
+      <div class="shape shape-11"></div>
+      <div class="shape shape-12"></div>
+      <div class="shape shape-13"></div>
+      <div class="shape shape-14"></div>
+      <div class="shape shape-15"></div>
+      <div class="shape shape-16"></div>
+      <div class="shape shape-17"></div>
+      <div class="shape shape-18"></div>
+      <div class="shape shape-19"></div>
+      <div class="shape shape-20"></div>
+      <div class="shape shape-21"></div>
+      <div class="shape shape-22"></div>
+      <div class="shape shape-23"></div>
+      <div class="shape shape-24"></div>
+      <div class="shape shape-25"></div>
+      <div class="shape shape-26"></div>
+      <div class="shape shape-27"></div>
+      <div class="shape shape-28"></div>
     </div>
     <div class="geometric-grid"></div>
     <div class="particle-field"></div>
@@ -214,6 +236,226 @@ title: Welcome
     top: 80%;
     right: 25%;
     animation-delay: -15s;
+  }
+
+  .shape-7 {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.18));
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 40%;
+    left: 70%;
+    animation-delay: -18s;
+  }
+
+  .shape-8 {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.22));
+    border-radius: 50%;
+    top: 75%;
+    right: 35%;
+    animation-delay: -21s;
+  }
+
+  .shape-9 {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.12));
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    top: 25%;
+    left: 45%;
+    animation-delay: -24s;
+  }
+
+  .shape-10 {
+    width: 85px;
+    height: 85px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.08));
+    border-radius: 50%;
+    top: 85%;
+    left: 5%;
+    animation-delay: -27s;
+  }
+
+  .shape-11 {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.15));
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 5%;
+    right: 5%;
+    animation-delay: -30s;
+  }
+
+  .shape-12 {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.2));
+    border-radius: 8px;
+    top: 45%;
+    right: 45%;
+    animation-delay: -33s;
+  }
+
+  .shape-13 {
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.1));
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 90%;
+    right: 10%;
+    animation-delay: -36s;
+  }
+
+  .shape-14 {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.16));
+    border-radius: 50%;
+    top: 15%;
+    left: 25%;
+    animation-delay: -39s;
+  }
+
+  .shape-15 {
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.14));
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    top: 55%;
+    left: 15%;
+    animation-delay: -42s;
+  }
+
+  .shape-16 {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.18));
+    border-radius: 8px;
+    top: 35%;
+    right: 25%;
+    animation-delay: -45s;
+  }
+
+  .shape-17 {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.06));
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 10%;
+    left: 35%;
+    animation-delay: -48s;
+  }
+
+  .shape-18 {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.13));
+    border-radius: 50%;
+    top: 65%;
+    right: 55%;
+    animation-delay: -51s;
+  }
+
+  .shape-19 {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.11));
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 80%;
+    left: 40%;
+    animation-delay: -54s;
+  }
+
+  .shape-20 {
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.25));
+    border-radius: 50%;
+    top: 50%;
+    left: 80%;
+    animation-delay: -57s;
+  }
+
+  .shape-21 {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.09));
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    top: 20%;
+    right: 40%;
+    animation-delay: -60s;
+  }
+
+  .shape-22 {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.12));
+    border-radius: 8px;
+    top: 70%;
+    right: 30%;
+    animation-delay: -63s;
+  }
+
+  .shape-23 {
+    width: 95px;
+    height: 95px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.07));
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 5%;
+    left: 55%;
+    animation-delay: -66s;
+  }
+
+  .shape-24 {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.19));
+    border-radius: 50%;
+    top: 30%;
+    left: 85%;
+    animation-delay: -69s;
+  }
+
+  .shape-25 {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.14));
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 95%;
+    left: 25%;
+    animation-delay: -72s;
+  }
+
+  .shape-26 {
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.08));
+    border-radius: 50%;
+    top: 40%;
+    right: 15%;
+    animation-delay: -75s;
+  }
+
+  .shape-27 {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.17));
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    top: 60%;
+    left: 90%;
+    animation-delay: -78s;
+  }
+
+  .shape-28 {
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(45deg, #fff, rgba(255,255,255,0.11));
+    border-radius: 8px;
+    top: 85%;
+    right: 50%;
+    animation-delay: -81s;
   }
 
   /* Geometric Grid Pattern */

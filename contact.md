@@ -11,6 +11,26 @@ title: Contact
             <div class="float-element float-2"></div>
             <div class="float-element float-3"></div>
             <div class="float-element float-4"></div>
+            <div class="float-element float-5"></div>
+            <div class="float-element float-6"></div>
+            <div class="float-element float-7"></div>
+            <div class="float-element float-8"></div>
+            <div class="float-element float-9"></div>
+            <div class="float-element float-10"></div>
+            <div class="float-element float-11"></div>
+            <div class="float-element float-12"></div>
+            <div class="float-element float-13"></div>
+            <div class="float-element float-14"></div>
+            <div class="float-element float-15"></div>
+            <div class="float-element float-16"></div>
+            <div class="float-element float-17"></div>
+            <div class="float-element float-18"></div>
+            <div class="float-element float-19"></div>
+            <div class="float-element float-20"></div>
+            <div class="float-element float-21"></div>
+            <div class="float-element float-22"></div>
+            <div class="float-element float-23"></div>
+            <div class="float-element float-24"></div>
         </div>
         <div class="geometric-pattern"></div>
         <div class="particle-field"></div>
@@ -175,6 +195,206 @@ title: Contact
         top: 80%;
         left: 20%;
         animation-delay: -15s;
+    }
+
+    .float-5 {
+        width: 55px;
+        height: 55px;
+        background: linear-gradient(45deg, #9b59b6, rgba(155, 89, 182, 0.3));
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        top: 10%;
+        right: 18%;
+        animation-delay: -20s;
+    }
+
+    .float-6 {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(45deg, #16a085, rgba(22, 160, 133, 0.3));
+        border-radius: 50%;
+        top: 60%;
+        left: 60%;
+        animation-delay: -25s;
+    }
+
+    .float-7 {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(45deg, #8e44ad, rgba(142, 68, 173, 0.3));
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        top: 35%;
+        right: 35%;
+        animation-delay: -30s;
+    }
+
+    .float-8 {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(45deg, #27ae60, rgba(39, 174, 96, 0.3));
+        border-radius: 50%;
+        top: 5%;
+        left: 75%;
+        animation-delay: -35s;
+    }
+
+    .float-9 {
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(45deg, #d35400, rgba(211, 84, 0, 0.3));
+        border-radius: 8px;
+        top: 45%;
+        left: 25%;
+        animation-delay: -40s;
+    }
+
+    .float-10 {
+        width: 65px;
+        height: 65px;
+        background: linear-gradient(45deg, #2980b9, rgba(41, 128, 185, 0.3));
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        top: 75%;
+        right: 25%;
+        animation-delay: -45s;
+    }
+
+    .float-11 {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(45deg, #c0392b, rgba(192, 57, 43, 0.3));
+        border-radius: 50%;
+        top: 25%;
+        right: 65%;
+        animation-delay: -50s;
+    }
+
+    .float-12 {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(45deg, #f39c12, rgba(243, 156, 18, 0.3));
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        top: 55%;
+        left: 45%;
+        animation-delay: -55s;
+    }
+
+    .float-13 {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(45deg, #8e44ad, rgba(142, 68, 173, 0.3));
+        border-radius: 8px;
+        top: 15%;
+        right: 55%;
+        animation-delay: -60s;
+    }
+
+    .float-14 {
+        width: 85px;
+        height: 85px;
+        background: linear-gradient(45deg, #16a085, rgba(22, 160, 133, 0.3));
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        top: 65%;
+        right: 45%;
+        animation-delay: -65s;
+    }
+
+    .float-15 {
+        width: 35px;
+        height: 35px;
+        background: linear-gradient(45deg, #e67e22, rgba(230, 126, 34, 0.3));
+        border-radius: 50%;
+        top: 85%;
+        left: 35%;
+        animation-delay: -70s;
+    }
+
+    .float-16 {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #3498db, rgba(52, 152, 219, 0.3));
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        top: 95%;
+        right: 35%;
+        animation-delay: -75s;
+    }
+
+    .float-17 {
+        width: 55px;
+        height: 55px;
+        background: linear-gradient(45deg, #e74c3c, rgba(231, 76, 60, 0.3));
+        border-radius: 50%;
+        top: 5%;
+        left: 55%;
+        animation-delay: -80s;
+    }
+
+    .float-18 {
+        width: 75px;
+        height: 75px;
+        background: linear-gradient(45deg, #2ecc71, rgba(46, 204, 113, 0.3));
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        top: 35%;
+        left: 15%;
+        animation-delay: -85s;
+    }
+
+    .float-19 {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(45deg, #9b59b6, rgba(155, 89, 182, 0.3));
+        border-radius: 8px;
+        top: 75%;
+        left: 65%;
+        animation-delay: -90s;
+    }
+
+    .float-20 {
+        width: 65px;
+        height: 65px;
+        background: linear-gradient(45deg, #1abc9c, rgba(26, 188, 156, 0.3));
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        top: 45%;
+        right: 15%;
+        animation-delay: -95s;
+    }
+
+    .float-21 {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(45deg, #f39c12, rgba(243, 156, 18, 0.3));
+        border-radius: 50%;
+        top: 25%;
+        left: 85%;
+        animation-delay: -100s;
+    }
+
+    .float-22 {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(45deg, #34495e, rgba(52, 73, 94, 0.3));
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        top: 55%;
+        right: 55%;
+        animation-delay: -105s;
+    }
+
+    .float-23 {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(45deg, #e67e22, rgba(230, 126, 34, 0.3));
+        border-radius: 8px;
+        top: 15%;
+        left: 35%;
+        animation-delay: -110s;
+    }
+
+    .float-24 {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(45deg, #27ae60, rgba(39, 174, 96, 0.3));
+        border-radius: 50%;
+        top: 65%;
+        left: 25%;
+        animation-delay: -115s;
     }
 
     /* Geometric Pattern */
