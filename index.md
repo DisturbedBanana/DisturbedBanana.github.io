@@ -4,13 +4,6 @@ title: Welcome
 ---
 
 <div class="hero full-bleed">
-  <!-- Animated background elements -->
-  <div class="hero-bg-patterns">
-    <div class="geometric-grid"></div>
-    <div class="particle-field"></div>
-    <div class="wave-overlay"></div>
-  </div>
-  
   <div class="hero-content">
     <h1>Lucas Guichard</h1>
     <p class="subtitle">Gameplay & Tools Developer, UX enthusiast</p>
@@ -106,75 +99,10 @@ title: Welcome
     color: white;
     text-align: center;
     padding: 2rem;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(231, 76, 60, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(155, 89, 182, 0.3) 0%, transparent 50%),
-      linear-gradient(135deg, 
-        #e74c3c 0%, 
-        #f39c12 15%, 
-        #f1c40f 30%, 
-        #2ecc71 45%, 
-        #3498db 60%, 
-        #9b59b6 75%, 
-        #e74c3c 100%);
-    background-size: 400% 400%, 300% 300%, 350% 350%, 400% 400%;
-    animation: 
-      scroll-bg 20s ease infinite,
-      pulse-glow 8s ease-in-out infinite;
+    background: linear-gradient(120deg, #0b0b16, #1a1430 40%, #0b0b16 80%);
   }
 
-  /* Animated Background Patterns */
-  .hero-bg-patterns {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-  }
-
-  /* Geometric Grid Pattern */
-  .geometric-grid {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: grid-move 30s linear infinite;
-  }
-
-  /* Particle Field */
-  .particle-field {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px),
-      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 100px 100px, 150px 150px;
-    animation: particle-drift 25s ease-in-out infinite;
-  }
-
-  /* Wave Overlay */
-  .wave-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(45deg, 
-      rgba(255,255,255,0.1) 25%, 
-      transparent 25%, 
-      transparent 50%, 
-      rgba(255,255,255,0.1) 50%, 
-      rgba(255,255,255,0.1) 75%, 
-      transparent 75%);
-    background-size: 60px 60px;
-    animation: wave-flow 12s linear infinite;
-  }
+  /* Clean canvas; decorative layers are injected by JS */
 
   /* Hero Content */
   .hero-content { 
