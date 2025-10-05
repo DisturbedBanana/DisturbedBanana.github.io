@@ -106,39 +106,60 @@ title: Contact
         overflow: hidden;
     }
 
-    /* Animated Background Patterns */
+    /* Clean Geometric Background */
     .contact-bg-patterns {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         z-index: 1;
         pointer-events: none;
+        overflow: hidden;
     }
 
-    /* Geometric Pattern */
+    /* Subtle animated background */
     .geometric-pattern {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-image: 
-            linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
-        background-size: 40px 40px;
-        animation: pattern-move 40s linear infinite;
+        background: 
+            radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+            radial-gradient(circle at 70% 80%, rgba(240, 147, 251, 0.12) 0%, transparent 60%),
+            linear-gradient(135deg, rgba(79, 172, 254, 0.08) 0%, transparent 50%);
+        animation: background-pulse 15s ease-in-out infinite;
     }
 
-    /* Particle Field */
+    /* Single floating shape */
     .particle-field {
         position: absolute;
         width: 100%;
         height: 100%;
+    }
+
+    .particle-field::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 2px solid rgba(99, 102, 241, 0.15);
+        border-radius: 50%;
+        top: 30%;
+        left: 15%;
+        animation: gentle-float 20s ease-in-out infinite;
+    }
+
+    /* Add animated dots pattern */
+    .particle-field::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
         background-image: 
-            radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
-            radial-gradient(circle at 80% 80%, rgba(231, 76, 60, 0.1) 1px, transparent 1px);
-        background-size: 80px 80px, 120px 120px;
-        animation: particle-drift-contact 30s ease-in-out infinite;
+            radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+            radial-gradient(circle at 80% 70%, rgba(240, 147, 251, 0.08) 1px, transparent 1px);
+        background-size: 120px 120px, 80px 80px;
+        animation: dots-drift 25s ease-in-out infinite;
     }
 
     /* Contact Header */
@@ -156,9 +177,24 @@ title: Contact
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        animation: text-shimmer-contact 4s ease-in-out infinite;
+        animation: text-shimmer-contact 6s ease-in-out infinite;
         margin-bottom: 1rem;
-        text-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+        text-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        position: relative;
+        display: inline-block;
+    }
+
+    .contact-header h1::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 8px;
+        z-index: -1;
+        animation: subtle-glow 8s ease-in-out infinite;
     }
 
     .subtitle {
@@ -464,19 +500,59 @@ title: Contact
     }
 
     /* Animations */
-    @keyframes pattern-move {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(40px, 40px); }
+    @keyframes background-pulse {
+        0%, 100% { 
+            opacity: 0.7;
+            transform: scale(1);
+        }
+        50% { 
+            opacity: 1;
+            transform: scale(1.1);
+        }
     }
 
-    @keyframes particle-drift-contact {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(-15px, -15px); }
+    @keyframes gentle-float {
+        0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.2;
+        }
+        25% { 
+            transform: translateY(-20px) translateX(15px) scale(1.1);
+            opacity: 0.4;
+        }
+        50% { 
+            transform: translateY(-10px) translateX(-10px) scale(0.9);
+            opacity: 0.3;
+        }
+        75% { 
+            transform: translateY(-30px) translateX(5px) scale(1.05);
+            opacity: 0.5;
+        }
+    }
+
+    @keyframes dots-drift {
+        0%, 100% { 
+            transform: translate(0, 0);
+            opacity: 0.3;
+        }
+        50% { 
+            transform: translate(-20px, -15px);
+            opacity: 0.6;
+        }
     }
 
     @keyframes text-shimmer-contact {
         0%, 100% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
+    }
+
+    @keyframes subtle-glow {
+        0%, 100% { 
+            opacity: 0.1;
+        }
+        50% { 
+            opacity: 0.3;
+        }
     }
 
     @keyframes rainbow-flow {
